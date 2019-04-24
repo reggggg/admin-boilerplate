@@ -1,0 +1,21 @@
+.topBar {
+  width: 100%;
+  position: absolute;
+  z-index: 90;
+  background-color: #ecf0f1;
+}
+.topBar .topBarContent {
+  padding-left: 315px;
+  /* padding-left according the width of sidebar + spacing   */
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.topBar .topBarContent div.mobileViewToggler svg {
+  font-size: 22px;
+  cursor: pointer;
+}
+@media(max-width: 767px){
+  .topBar .topBarContent {
+    padding-left: 15px;
+  }
+}

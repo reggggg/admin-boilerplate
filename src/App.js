@@ -26,11 +26,35 @@ class App extends Component {
         <Router history={history}>
           <React.Suspense fallback={loading()}>
             <Switch>
-              <Route exact path="/login" name="Login Page" render={props => <Login {...props} />} />
-              <Route exact path="/register" name="Register Page" render={props => <Register {...props} />} />
-              <Route exact path="/forgotPassword" name="Forgot Password Page" render={props => <ForgotPassword {...props} />} />
-              <Route exact path="/404" name="Error 404" render={props => <Error404 {...props} />} />
-              <Route path="/" name="Home" render={props => <DefaultLayout {...props} />} />
+              <Route
+                exact
+                path="/login"
+                name="Login Page"
+                render={props => <Login {...props} />}
+              />
+              <Route
+                exact
+                path="/register"
+                name="Register Page"
+                render={props => <Register {...props} />}
+              />
+              <Route
+                exact 
+                path="/forgotPassword"
+                name="Forgot Password Page"
+                render={props => <ForgotPassword {...props} />}
+              />
+              <Route
+                exact
+                path="/404"
+                name="Error 404"
+                render={props => <Error404 {...props} />}
+              />
+              <Route
+                path="/"
+                name="Home"
+                render={props => <DefaultLayout {...props} />}
+              />
             </Switch>
           </React.Suspense>
         </Router>
