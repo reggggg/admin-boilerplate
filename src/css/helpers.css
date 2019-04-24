@@ -1,0 +1,19 @@
+button {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+input {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  margin: 0;
+  padding: 0;
+}
