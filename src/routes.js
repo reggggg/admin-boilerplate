@@ -5,6 +5,11 @@ const Dashboard = React.lazy(() => import('./components/views/Dashboard/Dashboar
 const routes = [
   {
     path: '/',
+    exact: true,
+    name: 'Home',
+  },
+  {
+    path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard
   },
