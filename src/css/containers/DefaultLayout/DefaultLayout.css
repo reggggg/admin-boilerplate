@@ -1,3 +1,21 @@
 .main {
-  
+
+}
+.main .layout {
+
+}
+.main .layout .layoutBody {
+  padding-top: 60px;
+  padding-left: 100px;
+  transition: all 0.3s ease;
+}
+.main .layout .layoutBody.adjust {
+  padding-left: 315px;
+  /* padding-left according the width of sidebar + spacing   */
+}
+
+@media(max-width: 767px){
+  .main .layout .layoutBody.adjust {
+    padding-left: 100px;
+  }
 }

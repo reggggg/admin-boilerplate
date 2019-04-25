@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import { assetReport } from '../../../js/json/graphs.js';
 import '../../../css/views/Dashboard/Dashboard.css';
 
 class Dashboard extends Component {
@@ -7,7 +8,9 @@ class Dashboard extends Component {
   render(){
     return (
       <div className="dashboard">
-        Dashboard
+        <div className="dashboardContent">
+          Dashboard
+        </div>
       </div>
     );
   }

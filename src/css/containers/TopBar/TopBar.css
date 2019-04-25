@@ -3,19 +3,27 @@
   position: absolute;
   z-index: 90;
   background-color: #ecf0f1;
+  border-bottom: 1px solid #dfe6e9;
 }
 .topBar .topBarContent {
-  padding-left: 315px;
-  /* padding-left according the width of sidebar + spacing   */
+  padding-left: 100px;
   padding-top: 12px;
   padding-bottom: 12px;
+  transition: all 0.3s ease;
+}
+.topBar .topBarContent.adjust {
+  padding-left: 315px;
+  /* padding-left according the width of sidebar + spacing   */
+}
+.topBar .topBarContent div.mobileViewToggler {
+
 }
 .topBar .topBarContent div.mobileViewToggler svg {
   font-size: 22px;
   cursor: pointer;
 }
 @media(max-width: 767px){
-  .topBar .topBarContent {
-    padding-left: 15px;
+  .topBar .topBarContent.adjust {
+    padding-left: 100px;
   }
 }
