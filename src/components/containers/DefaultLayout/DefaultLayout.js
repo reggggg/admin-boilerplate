@@ -39,12 +39,11 @@ class DefaultLayout extends Component {
           toggleSideNav={this.state.hideSideNav}
          />
         <div className="layout">
-          <div className="layoutBody" className={!this.state.hideSideNav ? 'layoutBody' : 'layoutBody adjust'}>
+          <div className={!this.state.hideSideNav ? 'layoutBody' : 'layoutBody adjust'}>
             <Suspense fallback={this.layoutLoader()}>
               <Switch>
                 {
                   routes.map(( route, index ) => {
-                    document.title = "DXS | " + route.name;
                     return route.component ? (
                       <Route
                         key={index}

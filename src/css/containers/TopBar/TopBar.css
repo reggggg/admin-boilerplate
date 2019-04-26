@@ -6,7 +6,7 @@
   border-bottom: 1px solid #dfe6e9;
 }
 .topBar .topBarContent {
-  padding-left: 100px;
+  padding-left: 95px;
   padding-top: 12px;
   padding-bottom: 12px;
   transition: all 0.3s ease;
@@ -24,6 +24,6 @@
 }
 @media(max-width: 767px){
   .topBar .topBarContent.adjust {
-    padding-left: 100px;
+    padding-left: 95px;
   }
 }

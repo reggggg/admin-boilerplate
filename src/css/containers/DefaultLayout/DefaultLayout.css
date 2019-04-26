@@ -6,7 +6,7 @@
 }
 .main .layout .layoutBody {
   padding-top: 60px;
-  padding-left: 100px;
+  padding-left: 95px;
   transition: all 0.3s ease;
 }
 .main .layout .layoutBody.adjust {
@@ -16,6 +16,6 @@
 
 @media(max-width: 767px){
   .main .layout .layoutBody.adjust {
-    padding-left: 100px;
+    padding-left: 95px;
   }
 }
