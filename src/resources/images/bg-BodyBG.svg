@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1344px" height="900px" viewBox="0 0 1344 900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>bg-BodyBG</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="61" y="49" width="1244" height="803" rx="10"></rect>
+        <filter x="-6.0%" y="-9.3%" width="112.1%" height="118.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="10" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.06 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DSX-TechDog-Project---Dashboard" transform="translate(-11.000000, 0.000000)" fill-rule="nonzero">
+            <g id="bg-BodyBG">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#EFF1FC" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

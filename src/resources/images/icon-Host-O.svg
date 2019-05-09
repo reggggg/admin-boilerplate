@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="150px" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-Host-O</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="62" cy="62" r="62"></circle>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="3.061617e-15%" id="linearGradient-3">
+            <stop stop-color="#00D5E4" offset="0%"></stop>
+            <stop stop-color="#00ABC5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DSX-TechDog-Project---Dashboard" transform="translate(-569.000000, -455.000000)">
+            <g id="icon-Host-O" transform="translate(569.000000, 455.000000)">
+                <circle id="Oval-Copy" fill="#DBDBDB" fill-rule="nonzero" cx="75" cy="75" r="75"></circle>
+                <g id="Rectangle-Copy-15" transform="translate(75.000000, 75.000000) scale(1, -1) translate(-75.000000, -75.000000) translate(13.000000, 13.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FDFDFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <rect id="Rectangle" fill="#EFF1FC" fill-rule="nonzero" mask="url(#mask-2)" x="0" y="91" width="124" height="79"></rect>
+                    <rect id="Rectangle-Copy-22" fill="url(#linearGradient-3)" fill-rule="nonzero" mask="url(#mask-2)" x="0" y="-11" width="124" height="102"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

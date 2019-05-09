@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="164px" height="70px" viewBox="0 0 164 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>bg-dropDown</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="379" y="225" width="146" height="52" rx="6"></rect>
+        <filter x="-9.2%" y="-24.0%" width="119.9%" height="155.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="1" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.02 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DSX-TechDog-Project---Permissions-(Admin-Authentication)" transform="translate(-371.000000, -218.000000)" fill-rule="nonzero">
+            <g id="bg-dropDown">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#EFF1FC" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

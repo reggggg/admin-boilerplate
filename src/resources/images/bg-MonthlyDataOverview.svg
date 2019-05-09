@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="501px" height="358px" viewBox="0 0 501 358" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>bg-MonthlyDataOverview</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="777" y="174.5646" width="483" height="340" rx="10"></rect>
+        <filter x="-2.8%" y="-3.7%" width="106.0%" height="108.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="1" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.02 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DSX-TechDog-Project---Dashboard" transform="translate(-769.000000, -168.000000)" fill-rule="nonzero">
+            <g id="bg-MonthlyDataOverview">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FDFDFF" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

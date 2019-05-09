@@ -1,9 +1,13 @@
 .leftSideBar {
   width: 300px;
   height: 100vh;
-  background-color: #2c3e50;
+  background-image: url('../../../resources/images/img-sidebar.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: fixed;
   z-index: 100;
+  /* overflow-y: scroll; */
   transition: all 0.3s ease;
 }
 .leftSideBar::-webkit-scrollbar {
@@ -15,27 +19,65 @@
 .leftSideBar .leftSideBarContent {
 
 }
+.leftSideBar .leftSideBarContent .logoBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 12px;
+}
+.leftSideBar .leftSideBarContent .logoBar.centered {
+  justify-content: center;
+}
+.leftSideBar .leftSideBarContent .logoBar .imgDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.leftSideBar .leftSideBarContent .logoBar .imgDiv.hidden {
+  display: none;
+}
+.leftSideBar .leftSideBarContent .logoBar .mobileBarToggler {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.leftSideBar .leftSideBarContent .logoBar .mobileBarToggler svg {
+  color: #dbdbdb;
+  font-size: 20px;
+  cursor: pointer;
+}
 .leftSideBar .leftSideBarContent ul {
   margin-top: 50px;
 }
 .leftSideBar .leftSideBarContent ul li.eachNav {
   cursor: pointer;
-  border: 1px solid Transparent;
   border-radius: 0;
+  border-left: 4px solid Transparent;
 }
-.leftSideBar .leftSideBarContent ul li.eachNav:hover {
-  background-color: #2f3640;
+.leftSideBar .leftSideBarContent ul li.eachNav.isActive {
+  border-left: 4px solid #e67e22;
+  background-color: #6C94BF;
 }
-
 .leftSideBar .leftSideBarContent ul li.eachNav span {
-  color: #fff;
+  color: #dbdbdb;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 23px;
+  padding: 16px 45px;
+  border-left: 4px solid Transparent;
+}
+.leftSideBar .leftSideBarContent ul li.eachNav span:hover {
+  color: #fff;
+}
+.leftSideBar .leftSideBarContent ul li.eachNav span:hover .caretUpDown svg  {
+  color: #fff;
+}
+.leftSideBar .leftSideBarContent ul li.eachNav span.isActive {
+  color: #fff;
 }
 .leftSideBar .leftSideBarContent ul li.eachNav span.flexed {
   justify-content: center;
+  padding: 16px 5px;
 }
 .leftSideBar .leftSideBarContent ul li.eachNav span .nameAndIcon {
   display: flex;
@@ -77,16 +119,23 @@
   width: 150px;
 }
 .leftSideBar .leftSideBarContent ul li.eachNav .collapseContainer .childNavs {
-  color: #fff;
+  color: #DBDBDB;
   font-size: 13px;
-  margin: 6px 0;
-  padding: 4px 50px;
+  margin: 0;
+  padding: 4px 10px 4px 80px;
+  border-radius: 3px;
+}
+.leftSideBar .leftSideBarContent ul li.eachNav .collapseContainer .childNavs:last-child {
+  padding-bottom: 15px;
 }
 .leftSideBar .leftSideBarContent ul li.eachNav .collapseContainer .childNavs.absolute {
   padding: 5px 10px;
 }
+.leftSideBar .leftSideBarContent ul li.eachNav .collapseContainer .childNavs.isActive {
+  background-color: #34495e;
+}
 .leftSideBar .leftSideBarContent ul li.eachNav .collapseContainer .childNavs:hover {
-  background-color: #353b48;
+  color: #fff;
 }
 
 
@@ -97,6 +146,14 @@
 @media(max-width: 767px){
   .leftSideBar {
     width: 80px;
+  }
+  .leftSideBar .leftSideBarContent .logoBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .leftSideBar .leftSideBarContent .logoBar .imgDiv {
+    display: none;
   }
 
   /* Conditional media queries for Web responsive view */
@@ -111,6 +168,7 @@
   .leftSideBar .leftSideBarContent ul li.eachNav span,
   .leftSideBar .leftSideBarContent ul li.eachNav span.flexed {
     justify-content: center;
+    padding: 16px 5px;
   }
   .leftSideBar .leftSideBarContent ul li.eachNav .collapseContainer,
   .leftSideBar .leftSideBarContent ul li.eachNav .collapseContainer.absolute {

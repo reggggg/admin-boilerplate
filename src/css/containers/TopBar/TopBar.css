@@ -2,17 +2,22 @@
   width: 100%;
   position: absolute;
   z-index: 90;
-  background-color: #ecf0f1;
+  /* background-color: #ecf0f1; */
   border-bottom: 1px solid #dfe6e9;
 }
 .topBar .topBarContent {
   padding-left: 95px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-right: 15px;
+  padding-top: 22px;
+  padding-bottom: 22px;
   transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .topBar .topBarContent.adjust {
   padding-left: 315px;
+  padding-right: 15px;
   /* padding-left according the width of sidebar + spacing   */
 }
 .topBar .topBarContent div.mobileViewToggler {
@@ -22,6 +27,99 @@
   font-size: 22px;
   cursor: pointer;
 }
+
+.topBar .topBarContent .right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.topBar .topBarContent .right .language {
+  margin: 0 18px;
+}
+.topBar .topBarContent .right .language span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #717171;
+  cursor: pointer;
+}
+.topBar .topBarContent .right .language span .langDropdown {
+  margin: 0;
+  padding: 0;
+  margin-left: 5px;
+  position: relative;
+  bottom: 2px;
+}
+.topBar .topBarContent .right .language span .langDropdown .langSelectorDropdownMenu {
+  left: -120px !important;
+  top: 12px !important;
+  border-radius: 0;
+  font-size: 14px;
+}
+.topBar .topBarContent .right .language span .langSelectorDropdown {
+  outline: none;
+  box-shadow: none;
+  background-color: Transparent;
+  border: none;
+  color: #717171;
+  font-size: 13px;
+  padding: 0;
+}
+.topBar .topBarContent .right .language span .langSelectorDropdown::after {
+  position: relative;
+  top: 2px;
+}
+.topBar .topBarContent .right .language span svg.bordered {
+  border: 1px solid #717171;
+  font-size: 23px;
+  border-radius: 100%;
+  padding: 2px
+}
+.topBar .topBarContent .right .account {
+  color: #717171;
+  margin: 0 18px;
+}
+.topBar .topBarContent .right .account span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+.topBar .topBarContent .right .account span .accDropdown {
+  margin: 0;
+  padding: 0;
+  margin-left: 5px;
+  position: relative;
+  bottom: 2px;
+}
+.topBar .topBarContent .right .account span svg.bordered {
+  border: 1px solid #717171;
+  font-size: 23px;
+  border-radius: 100%;
+  padding: 2px
+}
+.topBar .topBarContent .right .account span .accDropdown .accDropdownButton {
+  outline: none;
+  box-shadow: none;
+  background-color: Transparent;
+  border: none;
+  color: #717171;
+  font-size: 13px;
+  padding: 0;
+  font-weight: 500;
+}
+.topBar .topBarContent .right .account span .accDropdown .accDropdownButton::after {
+  position: relative;
+  top: 2px;
+}
+.topBar .topBarContent .right .account span .accDropdown .accDropdownMenu {
+  position: absolute !important;
+  left: -30px !important;
+  top: 12px !important;
+  border-radius: 0;
+  font-size: 14px;
+}
+
 @media(max-width: 767px){
   .topBar .topBarContent.adjust {
     padding-left: 95px;

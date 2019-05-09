@@ -1,5 +1,16 @@
 import React, {Component} from 'react';
-import { FaBars } from 'react-icons/fa';
+import {
+  FaBars,
+  FaGlobeAsia,
+  FaCaretDown,
+  FaUserAlt,
+} from 'react-icons/fa';
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from 'reactstrap';
 
 import '../../../css/containers/TopBar/TopBar.css';
 
@@ -7,17 +18,22 @@ class TopBar extends Component {
   constructor(props){
     super(props);
     this.state = {
-      hideSideNav: false
+      langSelectorOpen: false,
+      accDropdownOpen: false
     }
   }
 
-  toggleSideNav = () => {
+  toggleLanguageSelector = () => {
     this.setState({
-      hideSideNav: !this.state.hideSideNav
-    });
-    this.props.toggleSideNav(this.state.hideSideNav);
+      langSelectorOpen: !this.state.langSelectorOpen
+    })
   }
 
+  toggleAccountDropdown = () => {
+    this.setState({
+      accDropdownOpen: !this.state.accDropdownOpen
+    });
+  }
 
 
   render(){
@@ -25,7 +41,33 @@ class TopBar extends Component {
       <div className="topBar">
         <div className={this.state.hideSideNav ? 'topBarContent' : 'topBarContent adjust'}>
           <div className="mobileViewToggler">
-            <FaBars onClick={this.toggleSideNav} />
+          
+          </div>
+          <div className="right">
+            <div className="language">
+              <span onClick={this.toggleLanguageSelector}>
+                <FaGlobeAsia className="bordered" />
+                <Dropdown className="langDropdown" isOpen={this.state.langSelectorOpen} toggle={this.toggleLanguageSelector}>
+                  <DropdownToggle className="langSelectorDropdown" caret>EN</DropdownToggle>
+                  <DropdownMenu className="langSelectorDropdownMenu">
+                    <DropdownItem>English</DropdownItem>
+                    <DropdownItem>Chinese</DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </span>
+            </div>
+            <div className="account">
+              <span onClick={this.toggleAccountDropdown}>
+                <FaUserAlt className="bordered" />
+                <Dropdown className="accDropdown" isOpen={this.state.accDropdownOpen} toggle={this.toggleAccountDropdown}>
+                  <DropdownToggle className="accDropdownButton" caret>Reggie</DropdownToggle>
+                  <DropdownMenu className="accDropdownMenu">
+                    <DropdownItem>Account</DropdownItem>
+                    <DropdownItem>Profile</DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </span>
+            </div>
           </div>
         </div>
       </div>

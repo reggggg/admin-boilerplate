@@ -1,5 +1,6 @@
 import React, {Component, Suspense} from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Redirect, Route, Switch, Link } from 'react-router-dom';
 
 import '../../../css/containers/DefaultLayout/DefaultLayout.css';
 
@@ -16,34 +17,48 @@ class DefaultLayout extends Component {
   constructor(props){
     super(props);
     this.state = {
-      hideSideNav: true
+      hideSideNav: true,
     }
   }
 
-  toggleSideNav = async (e) => {
+  toggleSideNav = async () => {
     await this.setState({
-      hideSideNav: e
+      hideSideNav: !this.state.hideSideNav
     });
-    console.log(this.state.hideSideNav);
   }
 
-  layoutLoader = () => <div className="spinner"></div>;
+  sideNavOpenToggler = () => {
+    this.setState({
+      hideSideNav: !this.state.hideSideNav
+    });
+  }
+
+
+
+  layoutLoader = () => <div className="loader-defaultLayout"></div>;
 
   render(){
     return (
       <div className="main">
-        <TopBar
-          toggleSideNav={(e) => this.toggleSideNav(e)}
-        />
+        <TopBar />
         <LeftSideBar
           toggleSideNav={this.state.hideSideNav}
-         />
+          sideNavOpener={() => this.sideNavOpenToggler()}
+        />
         <div className="layout">
           <div className={!this.state.hideSideNav ? 'layoutBody' : 'layoutBody adjust'}>
             <Suspense fallback={this.layoutLoader()}>
+              <div className="breadCrumbs">
+                <Breadcrumb>
+                  <BreadcrumbItem><Link to="/">Home</Link></BreadcrumbItem>
+                  <BreadcrumbItem><Link to="/">Home</Link></BreadcrumbItem>
+                  <BreadcrumbItem active>Dashboard</BreadcrumbItem>
+                </Breadcrumb>
+              </div>
               <Switch>
                 {
                   routes.map(( route, index ) => {
+                
                     return route.component ? (
                       <Route
                         key={index}

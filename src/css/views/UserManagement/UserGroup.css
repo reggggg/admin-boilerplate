@@ -1,0 +1,125 @@
+.userGroup {
+  width: 100;
+  margin: 0;
+}
+.userGroup .userGroupActionButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userGroup .userGroupActionButtons div {
+  margin: 0 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.userGroup .userGroupActionButtons div svg {
+  font-size: 16px;
+}
+.userGroup .userGroupActionButtons div.edit {
+  color: #3498db;
+}
+.userGroup .userGroupActionButtons div.delete {
+  color: #c0392b;
+}
+.userGroup .dxs_dataTable .subHeaderDiv {
+  margin: 25px 17px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-flow: row wrap;
+}
+.userGroup .dxs_dataTable .subHeaderDiv div.searchBar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.userGroup .dxs_dataTable .subHeaderDiv div.searchBar svg {
+  color: #00ABC5;
+  font-size: 15px;
+  position: relative;
+  right: 25px
+}
+.userGroup .dxs_dataTable .subHeaderDiv div.searchBar input {
+  border: 1px solid #00ABC5;
+  border-radius: 4px;
+  width: 290px;
+  padding: 7px 35px 7px 12px;
+}
+.userGroup .dxs_dataTable .subHeaderDiv div.searchBar input::placeholder {
+  color: #7f8c8d;
+}
+.userGroup .dxs_dataTable .subHeaderDiv .controlPanelDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.userGroup .dxs_dataTable .subHeaderDiv .controlPanelDiv button {
+  border-radius: 4px;
+  margin: 4px;
+  font-size: 12px;
+}
+.userGroup .dxs_dataTable .subHeaderDiv .controlPanelDiv .createUser {
+
+}
+.userGroup .dxs_dataTable .subHeaderDiv .controlPanelDiv .createUser button {
+  width: 175px;
+  background-color: #00ABC5;
+  color: #fff;
+  padding: 6px 10px;
+  outline: none;
+}
+.userGroup .dxs_dataTable .subHeaderDiv .controlPanelDiv .importExport {
+
+}
+.userGroup .dxs_dataTable .subHeaderDiv .controlPanelDiv .importExport button {
+  border: 1px solid #B1B1B1;
+  background-color: Transparent;
+  color: #B1B1B1;
+  width: 84px;
+  padding: 4px 10px;
+  outline: none;
+}
+.userGroup .dxs_dataTable .subHeaderDiv .controlPanelDiv .importExport button:hover {
+  background-color: #00ABC5;
+  color: #fff;
+  border: 1px solid #00ABC5;
+}
+@media(max-width: 915px){
+  .userGroup .dxs_dataTable .subHeaderDiv .controlPanelDiv {
+    margin-top: 15px;
+  }
+}
+/* .userGroup .userGroupTable {
+  margin: 30px 0;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.userGroup .userGroupTable .sc-eNQAEJ {
+  padding: 30px;
+}
+.userGroup .userGroupTable .sc-eNQAEJ .sc-bdVaJa {
+  border: 1px solid #00ABC5;
+}
+.userGroup .userGroupTable .sc-eNQAEJ .sc-bwzfXH {
+  background-color: #00ABC5;
+}
+.userGroup .userGroupTable .sc-eNQAEJ .sc-bxivhb div {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+}
+.userGroup .userGroupTable header {
+  border-bottom: 1px solid #e4e4e4;
+  min-height: 35px;
+  padding: 0 14px;
+}
+.userGroup .userGroupTable header .sc-kAzzGY {
+  padding: 0 18px;
+}
+.userGroup .userGroupTable header div {
+  font-size: 13px !important;
+  font-weight: 500;
+} */

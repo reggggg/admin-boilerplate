@@ -1,89 +1,147 @@
 import React from 'react';
-import { FaSeedling } from 'react-icons/fa';
+import { FaSeedling, FaChevronDown, FaChartBar, FaRegUser } from 'react-icons/fa';
 const NavItems = [
   {
     isActive: false,
-    nav: 'User Management',
-    icon: <FaSeedling/>,
+    nav: 'Dashboard',
+    icon: <FaChartBar/>,
+    childNavs: [],
+    caret: null,
+    url: '/dashboard'
+  },
+  {
+    isActive: false,
+    nav: 'Users',
+    icon: <FaRegUser/>,
     childNavs: [
       {
-        childNav: 'User'
+        childNav: 'User List',
+        href: '/user_management/user_list'
       },
       {
         childNav: 'User Group',
-        href: '/userGroup'
+        href: '/user_management/user_group'
       },
-    ]
+    ],
+    caret: <FaChevronDown/>
   },
   {
     isActive: false,
-    nav: 'Asset Management',
-    icon: <FaSeedling/>,
+    nav: 'Assets',
+    icon: <FaRegUser/>,
     childNavs: [
-      {childNav: 'Assets'},
-      {childNav: 'Domain'},
-      {childNav: 'System User'},
-      {childNav: 'Service User'},
-      {childNav: 'Management User'},
-      {childNav: 'Label Management'},
-      {childNav: 'Command Filtering'},
-      {childNav: 'Batch Task'},
-    ]
+      {
+        childNav: 'Asset List',
+        href: '/assets/asset_list'
+      },
+      {
+        childNav: 'Domain',
+        href: '/assets/domain_list'
+      },
+      {
+        childNav: 'System User',
+        href: '/assets/system_user'
+      },
+      {
+        childNav: 'Service User',
+        href: '/assets/service_user'
+      },
+      {
+        childNav: 'Admin User',
+        href: '/assets/admin_user'
+      },
+      {
+        childNav: 'Labels',
+        href: '/assets/labels'
+      },
+      {
+        childNav: 'Command Filters',
+        href: '/assets/command_filters'
+      },
+      {
+        childNav: 'Bulk Tasks',
+        href: '/assets/bulk_tasks'
+      },
+    ],
+    caret: <FaChevronDown/>
   },
   {
     isActive: false,
-    nav: 'Authority Management',
-    icon: <FaSeedling/>,
+    nav: 'Permissions',
+    icon: <FaRegUser/>,
     childNavs: [
-      {childNav: 'Administrator Authorization'},
-      {childNav: 'Team Leader Authorization'},
-      {childNav: 'User Application'},
-      {childNav: 'Approval'},
-    ]
+      {childNav: 'Admin Authentication'},
+      {childNav: 'Group Admin Authentication'},
+      {childNav: 'User Apply'},
+      {childNav: 'Permission Approval'},
+    ],
+    caret: <FaChevronDown/>
   },
   {
     isActive: false,
-    nav: 'Session Management',
-    icon: <FaSeedling/>,
+    nav: 'Sessions',
+    icon: <FaRegUser/>,
     childNavs: [
-      {childNav: 'Online Conversation'},
-      {childNav: 'Historical Conversation'},
-      {childNav: 'Command Record'},
-      {childNav: 'Terminal Management'},
-    ]
+      {childNav: 'Session Online'},
+      {childNav: 'Session Offline'},
+      {childNav: 'Commands'},
+      {childNav: 'Terminal'},
+    ],
+    caret: <FaChevronDown/>
   },
   {
     isActive: false,
-    nav: 'Firewall Management',
-    icon: <FaSeedling/>,
+    nav: 'IP Tables Management',
+    icon: <FaRegUser/>,
     childNavs: [
-      {childNav: 'Firewall Status'},
-      {childNav: 'Security Group Template'},
-      {childNav: 'Security Group'},
-    ]
+      {childNav: 'IP Tables Status'},
+      {childNav: 'Securit Groups Template'},
+      {childNav: 'Security Groups'},
+      {childNav: 'Push'},
+    ],
+    caret: <FaChevronDown/>
   },
   {
     isActive: false,
     nav: 'Job Center',
-    icon: <FaSeedling/>,
+    icon: <FaRegUser/>,
     childNavs: [
-      {childNav: 'Task List'},
+      {childNav: '任务列表'},
       {childNav: 'Command Execution'},
-    ]
+    ],
+    caret: <FaChevronDown/>
   },
   {
     isActive: false,
-    nav: 'Log Audit',
-    icon: <FaSeedling/>,
+    nav: 'Audits',
+    icon: <FaRegUser/>,
     childNavs: [
       {childNav: 'Login Log'},
       {childNav: 'FTP Log'},
-      {childNav: 'Operation Log'},
-      {childNav: 'Change the Secret Log'},
-      {childNav: 'File Trasnfer Record'},
-      {childNav: 'Firewall Change Record'},
-      {childNav: 'Batch Task Record'},
-    ]
+      {childNav: 'Operate Log'},
+      {childNav: 'Password Change Log'},
+      {childNav: 'IP Tables History'},
+      {childNav: 'Task History '},
+    ],
+    caret: <FaChevronDown/>
+  },
+  {
+    isActive: false,
+    nav: 'Menu Management',
+    icon: <FaRegUser/>,
+    childNavs: [
+      {childNav: 'Dashboard'},
+      {childNav: 'Navbar'},
+    ],
+    caret: <FaChevronDown/>
+  },
+  {
+    isActive: false,
+    nav: 'Settings',
+    icon: <FaRegUser/>,
+    childNavs: [],
+    caret: null,
+    url: '/'
   },
 ]
 export default NavItems;

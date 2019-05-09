@@ -17,7 +17,7 @@ const ForgotPassword = React.lazy(() => import('./components/views/Pages/ForgotP
 const Error404 = React.lazy(() => import('./components/views/Pages/Error404'));
 
 //Lazy Loader
-const loading = () => <div className="spinner"></div>
+const loading = () => <div className="loader"></div>
 
 class App extends Component {
   render(){
@@ -39,7 +39,7 @@ class App extends Component {
                 render={props => <Register {...props} />}
               />
               <Route
-                exact 
+                exact
                 path="/forgotPassword"
                 name="Forgot Password Page"
                 render={props => <ForgotPassword {...props} />}

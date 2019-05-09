@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="169px" height="194px" viewBox="0 0 169 194" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>bg-Top10Login</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="942" y="533" width="150.350195" height="176.464844" rx="10"></rect>
+        <filter x="-9.0%" y="-7.1%" width="119.3%" height="116.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="1" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.02 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DSX-TechDog-Project---Dashboard" transform="translate(-934.000000, -526.000000)" fill-rule="nonzero">
+            <g id="bg-Top10Login">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FDFDFF" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

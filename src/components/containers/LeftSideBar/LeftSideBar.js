@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import { FaChevronDown, FaChevronUp, FaSeedling } from 'react-icons/fa';
+import { FaChevronUp, FaBars } from 'react-icons/fa';
 import { Collapse } from 'reactstrap';
 import NavItems from './NavItems.js';
+import classNames from 'classnames';
 
 import history from '../../../js/history';
+
 
 import '../../../css/containers/LeftSideBar/LeftSideBar.css';
 
@@ -13,8 +15,10 @@ class LeftSideBar extends Component {
     this.state = {
       hideSideNav: true,
       leftNavData: [],
+      activeIndex: 0,
     }
   }
+
 
   async componentWillReceiveProps(nextProps){
     if(this.props.toggleSideNav !== nextProps.toggleSideNav){
@@ -30,25 +34,39 @@ class LeftSideBar extends Component {
     });
   }
 
-  toggleNavItem = async (id) => {
+
+  toggleNavItem = async (id, url) => {
+    url = !null ? history.push(url) : null;
     let nav = this.state.leftNavData;
-    for(let i = 0; i < nav.length; i++){
-      nav[i].isActive = false;
+    if(id === this.state.activeIndex && this.state.leftNavData.length !== 0){
+        this.setState({
+          leftNavData: []
+        });
+    }else {
+      for(let i = 0; i < nav.length; i++){
+        nav[i].isActive = false;
+      }
     }
     nav[id].isActive = !nav[id].isActive;
-    await this.setState({
-      leftNavData: nav
+    this.setState({
+      leftNavData: nav,
+      activeIndex: id,
     });
   }
 
-  goFromChildRoute = (item) => {
+  goFromChildRoute = ( item ) => {
     history.push(item.href);
-    let nav = this.state.leftNavData;
-    for(let i = 0; i < nav.length; i++){
-      nav[i].isActive = false;
+    if(!this.state.hideSideNav){
+      this.state.leftNavData[this.state.activeIndex].isActive = false;
     }
   }
 
+  toggleSideNavShow = () => {
+    this.setState({
+      hideSideNav: !this.state.hideSideNav
+    });
+    this.props.sideNavOpener();
+  }
 
 
   render(){
@@ -56,38 +74,68 @@ class LeftSideBar extends Component {
     return (
       <div className={this.state.hideSideNav ? 'leftSideBar' : 'leftSideBar hidden'}>
         <div className="leftSideBarContent">
+          <div className={this.state.hideSideNav ? 'logoBar' : 'logoBar centered'}>
+            <div className={this.state.hideSideNav ? 'imgDiv' : 'imgDiv hidden'}>
+              <img src={require('../../../resources/images/logo-SampleOnly.svg')} alt=""/>
+            </div>
+            <div className="mobileBarToggler">
+              <FaBars onClick={() => this.toggleSideNavShow()} />
+            </div>
+          </div>
           <ul>
-            <li className="eachNav">
-              <span className={!this.state.hideSideNav ? 'flexed' : ''} onClick={() => history.push('/')}>
-                <div className="nameAndIcon">
-                  <div><FaSeedling /></div>
-                  <h6 className={!this.state.hideSideNav ? 'hidden' : ''}>Dashboard</h6>
-                </div>
-              </span>
-            </li>
             {
-              this.state.leftNavData.map(( item, index ) => (
-                <li className="eachNav" key={index}>
-                  <span className={!this.state.hideSideNav ? 'flexed' : ''} onClick={() => this.toggleNavItem(index)}>
-                    <div className="nameAndIcon">
-                      <div>{item.icon}</div>
-                      <h6 className={!this.state.hideSideNav ? 'hidden' : ''}>{item.nav}</h6>
-                    </div>
-                    <div className={!this.state.hideSideNav ? 'caretUpDown hidden' : 'caretUpDown'}>
-                      {this.state.leftNavData[index].isActive ? <FaChevronUp /> : <FaChevronDown />}
-                    </div>
-                  </span>
-                  <Collapse isOpen={item.isActive} className={!this.state.hideSideNav ? 'collapseContainer absolute' : 'collapseContainer'}>
-                    {
-                      item.childNavs.map(( item, index ) => (
-                        <div onClick={() => this.goFromChildRoute(item)} className={!this.state.hideSideNav ? 'childNavs absolute' : 'childNavs'} key={index}>
-                          {item.childNav}
-                        </div>
-                      ))
-                    }
-                  </Collapse>
-                </li>
-              ))
+              this.state.leftNavData.map(( item, index ) => {
+                let liClasses = classNames({
+                  'eachNav': true,
+                  'eachNav isActive': this.state.activeIndex === index ? true : false
+                });
+                let navItemClasses = classNames({
+                  '': true,
+                  'flexed': !this.state.hideSideNav ? true : false,
+                  'isActive': this.state.activeIndex === index ? true : false
+                });
+                let navTitleClasses = classNames({
+                  '': true,
+                  hidden: !this.state.hideSideNav ? true : false
+                });
+                let caretClasses = classNames({
+                  'caretUpDown': true,
+                  'caretUpDown hidden': !this.state.hideSideNav ? true : false
+                });
+                let collapseClasses = classNames({
+                  'collapseContainer': true,
+                  'collapseContainer absolute': !this.state.hideSideNav ? true : false
+                });
+                let caret = !this.state.leftNavData[index].isActive ? item.caret : <FaChevronUp />;
+                return (
+                  <li className={liClasses} key={index}>
+                    <span className={navItemClasses} onClick={() => this.toggleNavItem(index, item.url)}>
+                      <div className="nameAndIcon">
+                        <div>{item.icon}</div>
+                        <h6 className={navTitleClasses}>{item.nav}</h6>
+                      </div>
+                      <div className={caretClasses}>
+                        {item.caret != null ? caret : null}
+                      </div>
+                    </span>
+                    <Collapse isOpen={item.isActive} className={collapseClasses}>
+                      {
+                        item.childNavs.map(( item, index ) => {
+                          let navChildClasses = classNames({
+                            'childNavs': true,
+                            'childNavs absolute': !this.state.hideSideNav ? true : false,
+                          });
+                          return (
+                            <div onClick={() => this.goFromChildRoute(item, index)} className={navChildClasses} key={index}>
+                              {item.childNav}
+                            </div>
+                          )
+                        })
+                      }
+                    </Collapse>
+                  </li>
+                )
+              })
             }
           </ul>
         </div>
