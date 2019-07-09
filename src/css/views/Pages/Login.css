@@ -1,4 +1,155 @@
 .login {
   width: 100%;
+  height: 100vh;
   margin: 0;
+  /* overflow: hidden; */
+  background-color: rgb(35, 40, 50);
+}
+.login .loginContent {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login .loginContent .left {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0;
+}
+.login .loginContent .left .greetings {
+  padding: 15px 5vh;
+  width: 90%;
+}
+.login .loginContent .left .greetings h1 {
+  color: #fff;
+  font-family: 'Muli-SemiBold';
+  font-size: 48px;
+}
+.login .loginContent .left .greetings p {
+  color: #fff;
+  font-family: 'Muli-Regular';
+  font-size: 22px;
+  margin-top: 15px;
+}
+.login .loginContent .right {
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  min-width: 400px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+
+}
+.login .loginContent .right .forms {
+  text-align: center;
+  padding: 15px 35px;
+}
+.login .loginContent .right .forms label {
+  font-family: 'Muli-SemiBold';
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.login .loginContent .right .forms input[type="email"],
+.login .loginContent .right .forms input[type="password"] {
+  outline: none;
+  padding: 11px 13px;
+  width: 100%;
+  border: 1px solid rgb(35, 40, 50, 0.2);
+  border-radius: 3px;
+  font-family: 'Muli-Light';
+  font-size: 16px;
+  transition: border 0.2s;
+  margin: 7px 0;
+}
+.login .loginContent .right .forms input[type="email"]:hover,
+.login .loginContent .right .forms input[type="password"]:hover {
+  border: 1px solid rgb(35, 40, 50, 0.6);
+}
+.login .loginContent .right .forms input[type="email"]:focus,
+.login .loginContent .right .forms input[type="password"]:focus {
+  border: 1px solid rgb(35, 40, 50);
+}
+.login .loginContent .right .forms .middle {
+  margin: 11px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login .loginContent .right .forms .middle span.check {
+  font-size: 13px;
+  font-family: 'Muli-Regular';
+  cursor: default;
+  -webkit-user-select: none;
+}
+.login .loginContent .right .forms .middle span.check input[type="checkbox"]{
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+}
+.login .loginContent .right .forms .middle a {
+  font-size: 13px;
+  font-family: 'Muli-Regular'
+}
+.login .loginContent .right .forms button.submit {
+  width: 100%;
+  outline: none;
+  padding: 7px 13px;
+  border-radius: 3px;
+  background-color: rgb(35, 40, 50, 0.8);
+  font-family: 'Muli-SemiBold';
+  color: #fff;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+.login .loginContent .right .forms button.submit:hover {
+  background-color:  rgb(35, 40, 50, 0.9);
+}
+@media(max-width: 1050px){
+  .login .loginContent .left .greetings {
+    width: 100%;
+  }
+  .login .loginContent .left .greetings p {
+    text-align: justify;
+  }
+}
+@media(max-width: 860px){
+  .login .loginContent .right {
+    min-width: 320px;
+  }
+}
+@media(max-width: 767px){
+  .login  {
+    background-color: rgb(255, 255, 255);
+  }
+  .login .loginContent {
+    justify-content: center;
+  }
+  .login .loginContent .left .greetings {
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+  .login .loginContent .left .greetings h1  {
+    font-size: 30px;
+    color: #000;
+  }
+  .login .loginContent .left .greetings p  {
+    font-size: 16px;
+    color: #000;
+    text-align: justify;
+    text-align-last: center;
+  }
+  .login .loginContent .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }

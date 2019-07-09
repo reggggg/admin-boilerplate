@@ -1,17 +1,8 @@
 .main {
-  background-color: #ecf0f1;
+
 }
 .main .layout {
 
-}
-.main .layout .breadCrumbs {
-
-}
-.main .layout .breadCrumbs ol.breadcrumb {
-  padding: 5px;
-}
-.main .layout .breadCrumbs ol.breadcrumb li {
-  font-size: 12px;
 }
 
 .main .layout .loader-defaultLayout {

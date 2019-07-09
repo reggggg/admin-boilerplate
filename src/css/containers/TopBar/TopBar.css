@@ -33,48 +33,7 @@
   justify-content: flex-start;
   align-items: center;
 }
-.topBar .topBarContent .right .language {
-  margin: 0 18px;
-}
-.topBar .topBarContent .right .language span {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: #717171;
-  cursor: pointer;
-}
-.topBar .topBarContent .right .language span .langDropdown {
-  margin: 0;
-  padding: 0;
-  margin-left: 5px;
-  position: relative;
-  bottom: 2px;
-}
-.topBar .topBarContent .right .language span .langDropdown .langSelectorDropdownMenu {
-  left: -120px !important;
-  top: 12px !important;
-  border-radius: 0;
-  font-size: 14px;
-}
-.topBar .topBarContent .right .language span .langSelectorDropdown {
-  outline: none;
-  box-shadow: none;
-  background-color: Transparent;
-  border: none;
-  color: #717171;
-  font-size: 13px;
-  padding: 0;
-}
-.topBar .topBarContent .right .language span .langSelectorDropdown::after {
-  position: relative;
-  top: 2px;
-}
-.topBar .topBarContent .right .language span svg.bordered {
-  border: 1px solid #717171;
-  font-size: 23px;
-  border-radius: 100%;
-  padding: 2px
-}
+
 .topBar .topBarContent .right .account {
   color: #717171;
   margin: 0 18px;

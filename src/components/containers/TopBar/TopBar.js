@@ -41,21 +41,9 @@ class TopBar extends Component {
       <div className="topBar">
         <div className={this.state.hideSideNav ? 'topBarContent' : 'topBarContent adjust'}>
           <div className="mobileViewToggler">
-          
+
           </div>
           <div className="right">
-            <div className="language">
-              <span onClick={this.toggleLanguageSelector}>
-                <FaGlobeAsia className="bordered" />
-                <Dropdown className="langDropdown" isOpen={this.state.langSelectorOpen} toggle={this.toggleLanguageSelector}>
-                  <DropdownToggle className="langSelectorDropdown" caret>EN</DropdownToggle>
-                  <DropdownMenu className="langSelectorDropdownMenu">
-                    <DropdownItem>English</DropdownItem>
-                    <DropdownItem>Chinese</DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-              </span>
-            </div>
             <div className="account">
               <span onClick={this.toggleAccountDropdown}>
                 <FaUserAlt className="bordered" />

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { FaChevronUp, FaBars } from 'react-icons/fa';
+import { MdMenu, MdExpandLess } from 'react-icons/md';
 import { Collapse } from 'reactstrap';
 import NavItems from './NavItems.js';
 import classNames from 'classnames';
@@ -79,7 +79,7 @@ class LeftSideBar extends Component {
               <img src={require('../../../resources/images/logo-SampleOnly.svg')} alt=""/>
             </div>
             <div className="mobileBarToggler">
-              <FaBars onClick={() => this.toggleSideNavShow()} />
+              <MdMenu onClick={() => this.toggleSideNavShow()} />
             </div>
           </div>
           <ul>
@@ -106,7 +106,7 @@ class LeftSideBar extends Component {
                   'collapseContainer': true,
                   'collapseContainer absolute': !this.state.hideSideNav ? true : false
                 });
-                let caret = !this.state.leftNavData[index].isActive ? item.caret : <FaChevronUp />;
+                let caret = !this.state.leftNavData[index].isActive ? item.caret : <MdExpandLess />;
                 return (
                   <li className={liClasses} key={index}>
                     <span className={navItemClasses} onClick={() => this.toggleNavItem(index, item.url)}>

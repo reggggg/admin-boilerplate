@@ -48,17 +48,10 @@ class DefaultLayout extends Component {
         <div className="layout">
           <div className={!this.state.hideSideNav ? 'layoutBody' : 'layoutBody adjust'}>
             <Suspense fallback={this.layoutLoader()}>
-              <div className="breadCrumbs">
-                <Breadcrumb>
-                  <BreadcrumbItem><Link to="/">Home</Link></BreadcrumbItem>
-                  <BreadcrumbItem><Link to="/">Home</Link></BreadcrumbItem>
-                  <BreadcrumbItem active>Dashboard</BreadcrumbItem>
-                </Breadcrumb>
-              </div>
               <Switch>
                 {
                   routes.map(( route, index ) => {
-                
+
                     return route.component ? (
                       <Route
                         key={index}
