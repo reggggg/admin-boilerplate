@@ -87,7 +87,6 @@ class LeftSideBar extends Component {
               this.state.leftNavData.map(( item, index ) => {
                 let liClasses = classNames({
                   'eachNav': true,
-                  'eachNav isActive': this.state.activeIndex === index ? true : false
                 });
                 let navItemClasses = classNames({
                   '': true,

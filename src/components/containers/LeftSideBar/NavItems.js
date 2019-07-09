@@ -14,10 +14,8 @@ const NavItems = [
     nav: 'Permissions',
     icon: <MdSettings />,
     childNavs: [
-      {childNav: 'Admin Authentication'},
-      {childNav: 'Group Admin Authentication'},
-      {childNav: 'User Apply'},
-      {childNav: 'Permission Approval'},
+      {childNav: 'Users'},
+      {childNav: 'Admin'},
     ],
     caret: <MdExpandMore />
   },

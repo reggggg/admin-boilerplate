@@ -74,6 +74,16 @@
 .login .loginContent .right .forms input[type="password"]:focus {
   border: 1px solid rgb(35, 40, 50);
 }
+.login .loginContent .right .forms .errMsg.show {
+  display: block;
+}
+.login .loginContent .right .forms .errMsg {
+  font-size: 13px;
+  font-family: 'Muli-Regular';
+  color: #e74c3c;
+  margin: 3px 0;
+  display: none;
+}
 .login .loginContent .right .forms .middle {
   margin: 11px 0;
   display: flex;
@@ -107,9 +117,28 @@
   color: #fff;
   font-size: 13px;
   transition: background 0.2s;
+  margin: 5px 0;
 }
 .login .loginContent .right .forms button.submit:hover {
   background-color:  rgb(35, 40, 50, 0.9);
+}
+.login .loginContent .right .forms .noAccount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 12px;
+}
+.login .loginContent .right .forms .noAccount label {
+  margin: 0;
+  font-family: 'Muli-Regular';
+  font-size: 13px;
+}
+.login .loginContent .right .forms .noAccount a {
+  margin: 0;
+  margin-top: 4px;
+  font-family: 'Muli-Regular';
+  font-size: 13px;
 }
 @media(max-width: 1050px){
   .login .loginContent .left .greetings {

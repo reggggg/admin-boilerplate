@@ -1,17 +1,12 @@
 import React, {Component} from 'react';
-import {
-  FaBars,
-  FaGlobeAsia,
-  FaCaretDown,
-  FaUserAlt,
-} from 'react-icons/fa';
+import { MdAccountCircle, MdExpandMore } from 'react-icons/md';
 import {
   Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap';
-
+// import history from '../../../js/history';
 import '../../../css/containers/TopBar/TopBar.css';
 
 class TopBar extends Component {
@@ -34,7 +29,10 @@ class TopBar extends Component {
       accDropdownOpen: !this.state.accDropdownOpen
     });
   }
-
+  onLogout = () => {
+    localStorage.clear();
+    window.location.replace('/login');
+  }
 
   render(){
     return (
@@ -46,12 +44,12 @@ class TopBar extends Component {
           <div className="right">
             <div className="account">
               <span onClick={this.toggleAccountDropdown}>
-                <FaUserAlt className="bordered" />
+                <MdAccountCircle className="accountIcon" />
                 <Dropdown className="accDropdown" isOpen={this.state.accDropdownOpen} toggle={this.toggleAccountDropdown}>
-                  <DropdownToggle className="accDropdownButton" caret>Reggie</DropdownToggle>
+                  <DropdownToggle className="accDropdownButton">Reggie <MdExpandMore /></DropdownToggle>
                   <DropdownMenu className="accDropdownMenu">
                     <DropdownItem>Account</DropdownItem>
-                    <DropdownItem>Profile</DropdownItem>
+                    <DropdownItem onClick={this.onLogout}>Logout</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </span>

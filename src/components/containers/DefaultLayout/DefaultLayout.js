@@ -1,6 +1,5 @@
 import React, {Component, Suspense} from 'react';
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import { Redirect, Route, Switch, Link } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import '../../../css/containers/DefaultLayout/DefaultLayout.css';
 
