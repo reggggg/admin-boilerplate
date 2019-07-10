@@ -33,6 +33,9 @@
   justify-content: flex-start;
   align-items: center;
 }
+.leftSideBar .leftSideBarContent .logoBar .imgDiv img {
+
+}
 .leftSideBar .leftSideBarContent .logoBar .imgDiv.hidden {
   display: none;
 }

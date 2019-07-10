@@ -2,18 +2,29 @@
 /* border: 1px solid #ecf0f1; */
 
 /* table unique */
+.table-noResultsFound {
+  font-family: 'Muli-Regular';
+  font-size: 16px;
+}
 header.sc-chPdSV  {
   background-color: #f5f6fa;
 }
 header.sc-chPdSV .sc-kgoBCf {
-  font-size: 17px;
+  font-size: 16px;
   font-family: 'Muli-SemiBold';
+  color: #576574;
+}
+.sc-ckVGcZ {
+
 }
 .sc-gqjmRU {
   border-top: 1px solid #ecf0f1;
 }
 .sc-eNQAEJ {
   border-top: 1px solid #ecf0f1;
+}
+.sc-eNQAEJ .sc-bdVaJa .sc-dxgOiQ {
+
 }
 .sc-eNQAEJ button {
   outline: none;
@@ -32,6 +43,43 @@ header.sc-chPdSV .sc-kgoBCf {
   font-family: 'Muli-SemiBold';
   font-size: 12px;
   transition: background-color 0.2s;
+}
+.sc-ifAKCX .tableActionButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sc-ifAKCX .tableActionButtons button {
+  margin: 0 3px;
+  padding: 4px 7px;
+  font-family: 'Muli-SemiBold';
+  border-radius: 2px;
+  font-size: 11px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+}
+.sc-ifAKCX .tableActionButtons button:hover {
+  opacity: 0.8;
+}
+.sc-ifAKCX .tableActionButtons button.edit {
+  background-color: #2e86de;
+}
+.sc-ifAKCX .tableActionButtons button.accept {
+  background-color: #10ac84;
+}
+.sc-ifAKCX .tableActionButtons button.decline {
+  background-color: #576574;
+}
+.sc-ifAKCX .tableActionButtons button.delete {
+  background-color: #ee5253;
+}
+.sc-ifAKCX .tableActionButtons button svg {
+  position: relative;
+  bottom: 1px;
+  margin-right: 3px;
+  font-size: 14px;
 }
 .sc-bxivhb .sc-ifAKCX:hover {
   background-color: rgb(245,246,250, 0.6);

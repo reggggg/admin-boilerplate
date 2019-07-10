@@ -14,3 +14,11 @@
   border-top-left-radius: 2px !important;
   border-top-right-radius: 2px !important;
 }
+.permissionAdmin ul li span {
+
+}
+.permissionAdmin ul li span svg {
+  position: relative;
+  bottom: 1px;
+  font-size: 17px;
+}

@@ -8,3 +8,95 @@
 .adminManage .adminManageContent .table-body {
   border: 1px solid #ecf0f1;
 }
+
+
+/* CreateAdminPart */
+.createAdmin {
+
+}
+.createAdmin .createAdminContent {
+  padding: 27px 5px;
+}
+.createAdmin .createAdminContent .forms {
+
+}
+.createAdmin .createAdminContent .forms h2 {
+  font-family: 'Muli-SemiBold';
+  font-size: 16px;
+  margin-bottom: 8px;
+  background-color: rgb(245,246,250, 0.6);
+  padding: 13px;
+  color: #576574;
+  border-radius: 3px;
+}
+.createAdmin .createAdminContent .forms div.errMsg {
+  padding: 8px 10px;
+  color: #e74c3c;
+  font-family: 'Muli-Regular';
+  font-size: 15px;
+  display: none;
+}
+.createAdmin .createAdminContent .forms div.errMsg.show {
+  display: block;
+}
+.createAdmin .createAdminContent .forms input[type="email"],
+.createAdmin .createAdminContent .forms input[type="text"] {
+  outline: none;
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid rgb(35, 40, 50, 0.2);
+  border-radius: 3px;
+  font-family: 'Muli-Light';
+  font-size: 16px;
+  transition: border 0.2s;
+  margin: 7px 0;
+}
+.createAdmin .createAdminContent .forms input[type="email"]:hover,
+.createAdmin .createAdminContent .forms input[type="text"]:hover {
+  border: 1px solid rgb(35, 40, 50, 0.5);
+}
+.createAdmin .createAdminContent .forms input[type="email"]:focus,
+.createAdmin .createAdminContent .forms input[type="text"]:focus {
+  border: 1px solid rgb(35, 40, 50);
+}
+.createAdmin .createAdminContent .forms span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px 0;
+  -webkit-user-select: none;
+}
+.createAdmin .createAdminContent .forms span input[type="checkbox"] {
+  margin-right: 7px;
+  width: 15px;
+  height: 15px;
+}
+.createAdmin .createAdminContent .forms span p {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  font-size: 13px;
+  font-family: 'Muli-Regular';
+  word-spacing: 1px;
+}
+.createAdmin .createAdminContent .forms span p a  {
+  margin-left: 3px;
+}
+.createAdmin .createAdminContent .forms button {
+  margin: 5px 0;
+  outline: none;
+  padding: 7px 13px;
+  border-radius: 3px;
+  background-color: rgb(35, 40, 50, 0.8);
+  font-family: 'Muli-SemiBold';
+  color: #fff;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+.createAdmin .createAdminContent .forms button svg {
+  margin-right: 4px;
+  position: relative;
+  bottom: 1px;
+  font-size: 16px;
+}
