@@ -1,0 +1,47 @@
+/* add this to the content body */
+/* border: 1px solid #ecf0f1; */
+
+/* table unique */
+header.sc-chPdSV  {
+  background-color: #f5f6fa;
+}
+header.sc-chPdSV .sc-kgoBCf {
+  font-size: 17px;
+  font-family: 'Muli-SemiBold';
+}
+.sc-gqjmRU {
+  border-top: 1px solid #ecf0f1;
+}
+.sc-eNQAEJ {
+  border-top: 1px solid #ecf0f1;
+}
+.sc-eNQAEJ button {
+  outline: none;
+}
+.sc-eNQAEJ nav.sc-htpNat {
+  border-top: 1px solid #ecf0f1;
+}
+.sc-kAzzGY {
+  background-color: #ecf0f1;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: 1px solid #f5f6fa;
+  border-right: 1px solid #f5f6fa;
+}
+.sc-bxivhb .sc-ifAKCX {
+  font-family: 'Muli-SemiBold';
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+.sc-bxivhb .sc-ifAKCX:hover {
+  background-color: rgb(245,246,250, 0.6);
+  cursor: pointer;
+}
+.sc-gqjmRU .sc-ifAKCX {
+  font-family: 'Muli-Regular';
+  font-size: 12px;
+}
+.sc-kAzzGY .sc-cSHVUG {
+  font-family: 'Muli-Regular';
+  font-size: 14px;
+}

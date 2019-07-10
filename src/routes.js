@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Dashboard = React.lazy(() => import('./components/views/Dashboard/Dashboard'));
+const AdminManagement = React.lazy(() => import('./components/views/Permissions/Admin'));
 
 
 const routes = [
@@ -13,6 +14,11 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+  },
+  {
+    path: '/manage_admin',
+    name: 'Admin Management',
+    component: AdminManagement,
   },
 ];
 

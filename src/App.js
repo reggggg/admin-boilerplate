@@ -4,7 +4,7 @@ import history from './js/history';
 
 //Styles
 import './App.css';
-import './css/helpers.css';
+import './css/helpers/helpers.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Containers

@@ -1,0 +1,16 @@
+.permissionAdmin {
+
+}
+.permissionAdmin ul {
+  border-bottom: 1px solid #ecf0f1;
+}
+.permissionAdmin ul li {
+
+}
+.permissionAdmin ul li a {
+  font-family: 'Muli-Regular';
+  font-size: 13px;
+  -webkit-user-select: none;
+  border-top-left-radius: 2px !important;
+  border-top-right-radius: 2px !important;
+}

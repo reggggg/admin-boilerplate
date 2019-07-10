@@ -15,7 +15,10 @@ const NavItems = [
     icon: <MdSettings />,
     childNavs: [
       {childNav: 'Users'},
-      {childNav: 'Admin'},
+      {
+        childNav: 'Admin',
+        href: 'manage_admin'
+      },
     ],
     caret: <MdExpandMore />
   },

@@ -57,7 +57,9 @@ class LeftSideBar extends Component {
   goFromChildRoute = ( item ) => {
     history.push(item.href);
     if(!this.state.hideSideNav){
-      this.state.leftNavData[this.state.activeIndex].isActive = false;
+      let setActiveFalse = this.state.leftNavData;
+      setActiveFalse[this.state.activeIndex].isActive = false;
+      this.setState({ leftNavData: setActiveFalse });
     }
   }
 
