@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
-import { MdPersonAdd, MdModeEdit, MdContentPaste } from 'react-icons/md';
+import { MdAddShoppingCart, MdModeEdit } from 'react-icons/md';
 import classnames from 'classnames';
 
-import AdminManage from './Admin';
-import AdminRequests from './AdminRequests';
-import CreateAdmin from './CreateAdmin';
+import ManageProducts from './ManageProducts';
+
 import '../../../../css/views/Tabs/Tabs.css';
 
-class PermissionAdmin extends Component {
+class ProductsManagement extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,43 +25,36 @@ class PermissionAdmin extends Component {
 
   render(){
     return (
-      <div className="permissionAdmin">
+      <div className="productsManagement">
         <Nav tabs className="y-tabs">
           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === 1 })}
               onClick={() => this.toggle(1)}
-            ><span><MdModeEdit /> Manage Admin</span>
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              className={classnames({ active: this.state.activeTab === 2 })}
-              onClick={() => this.toggle(2)}
-            ><span><MdContentPaste /> Admin Requests</span>
+            ><span><MdModeEdit />Manage Products</span>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === 3 })}
               onClick={() => this.toggle(3)}
-            ><span><MdPersonAdd /> Create New Admin</span>
+            ><span><MdAddShoppingCart />Create New Product</span>
             </NavLink>
           </NavItem>
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId={1}>
-            <AdminManage />
+            <ManageProducts />
           </TabPane>
           <TabPane tabId={2}>
-            <AdminRequests />
+
           </TabPane>
           <TabPane tabId={3}>
-            <CreateAdmin />
+
           </TabPane>
         </TabContent>
       </div>
     );
   }
 }
-export default PermissionAdmin;
+export default ProductsManagement;

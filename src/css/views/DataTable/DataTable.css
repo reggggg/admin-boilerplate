@@ -19,6 +19,10 @@ header.sc-chPdSV .sc-kgoBCf {
 }
 .sc-gqjmRU {
   border-top: 1px solid #ecf0f1;
+  cursor: pointer;
+}
+.sc-gqjmRU:hover {
+  background-color: rgb(236, 240, 241, 0.2);
 }
 .sc-eNQAEJ {
   border-top: 1px solid #ecf0f1;
@@ -80,6 +84,35 @@ header.sc-chPdSV .sc-kgoBCf {
   bottom: 1px;
   margin-right: 3px;
   font-size: 14px;
+}
+.sc-ifAKCX .react-data-table--cell-content {
+
+}
+.sc-ifAKCX div.item_activity svg {
+  font-size: 17px;
+}
+.sc-ifAKCX div.item_activity .active_product {
+  color: #27ae60;
+}
+.sc-ifAKCX div.item_activity .disabled_product {
+  color: #c0392b;
+}
+.sc-ifAKCX .category_tags_parent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.sc-ifAKCX .category_tags_parent div.category_tags {
+  background-color: #34495e;
+  color: #fff;
+  font-size: 10px;
+  padding: 3px 5px;
+  border-radius: 3px;
+  text-overflow:  ellipsis;
+  margin: 2px;
+  font-family: 'Muli-SemiBold';
+
 }
 .sc-bxivhb .sc-ifAKCX:hover {
   background-color: rgb(245,246,250, 0.6);

@@ -1,24 +1,22 @@
-.permissionAdmin {
-
-}
-.permissionAdmin ul {
+ul.y-tabs {
   border-bottom: 1px solid #ecf0f1;
 }
-.permissionAdmin ul li {
+ul.y-tabs li {
 
 }
-.permissionAdmin ul li a {
+ul.y-tabs li a {
   font-family: 'Muli-Regular';
   font-size: 13px;
   -webkit-user-select: none;
   border-top-left-radius: 2px !important;
   border-top-right-radius: 2px !important;
 }
-.permissionAdmin ul li span {
+ul.y-tabs li span {
 
 }
-.permissionAdmin ul li span svg {
+ul.y-tabs li span svg {
   position: relative;
-  bottom: 1px;
+  bottom: 2px;
   font-size: 17px;
+  margin-right: 4px;
 }

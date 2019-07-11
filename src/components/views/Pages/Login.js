@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import history from '../../../js/history';
 
 import '../../../css/views/Pages/Login.css';
 
@@ -20,7 +21,8 @@ class Login extends Component {
 
   formOnChange = async e => {
     await this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      isErr: false
     });
   }
 
@@ -41,10 +43,22 @@ class Login extends Component {
   validateFields = () => {
     const { email, password } = this.state;
     this.setState({ isLoading: true });
-    if(!email || !password){
+    if(!email && !password){
       this.setState({
         isErr: true,
         errMsg: 'Input your credentials!',
+        isLoading: false
+      });
+    }else if(!email){
+      this.setState({
+        isErr: true,
+        errMsg: 'Input your email!',
+        isLoading: false
+      });
+    }else if(!password){
+      this.setState({
+        isErr: true,
+        errMsg: 'Input your password!',
         isLoading: false
       });
     }else if(this.regexValidateEmail(email) === false){
@@ -59,7 +73,8 @@ class Login extends Component {
   }
 
   loginSubmit = () => {
-    console.log('To Dashboard...')
+    console.log('To Dashboard...');
+    history.push('/dashboard');
     this.setState({ isLoading: false });
   }
   render(){
