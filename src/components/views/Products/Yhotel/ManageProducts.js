@@ -3,13 +3,13 @@ import DataTable from 'react-data-table-component';
 import { YHotelManageProduct } from '../../../tableColumns';
 import { Modal, Row, Col } from 'reactstrap';
 import Select from 'react-select';
-import Switch from 'react-toggle-switch'
+import Switch from "react-switch";
 
-import { MdKeyboardArrowDown, MdCheck, MdClose } from 'react-icons/md';
+import { MdKeyboardArrowDown, MdClose, MdSave, MdDeleteForever, MdFileUpload } from 'react-icons/md';
 import '../../../../css/views/Products/Yhotel/ManageProducts.css';
 import '../../../../css/views/DataTable/DataTable.css';
 import tableLoader from '../../../../css/helpers/tableLoader';
-import 'react-toggle-switch/dist/css/switch.min.css';
+
 
 class AdminManage extends Component {
   constructor(props){
@@ -17,9 +17,8 @@ class AdminManage extends Component {
     this.state = {
       data: [],
       selectedRow: {},
-      isItemActive: false,
       selectedRowIndex: null,
-      openModal: true,
+      openModal: false,
       loadingData: false,
       paginationInitRows: 10
     }
@@ -73,7 +72,9 @@ class AdminManage extends Component {
     });
   }
   componentDidMount(){
-    this.setState({ loadingData: false });
+    this.setState({
+      loadingData: false,
+    });
   }
 
 
@@ -102,8 +103,9 @@ class AdminManage extends Component {
 
   toggleItemActiveSwitch = async () => {
     await this.setState({
-      isItemActive: !this.state.isItemActive
+      selectedRow: {active: !this.state.selectedRow.active},
     });
+    console.log(this.state.selectedRow.active);
   }
 
   render(){
@@ -135,8 +137,9 @@ class AdminManage extends Component {
             />
           </div>
         </div>
-        <Modal isOpen={this.state.openModal} toggle={this.toggleModal}>
+        <Modal isOpen={this.state.openModal}>
           <div className="modal-manage-products">
+            <MdClose className="close-modal-absolute" onClick={this.toggleModal} />
             <img src={require('../../../../resources/images/carbonara.jpeg')} alt=""/>
             <div className="info-parent">
               <Row className="info-form">
@@ -176,7 +179,7 @@ class AdminManage extends Component {
               <Row className="info-form qty_activity">
                 <Col md="4">
                   <div className="info-each-row">
-                    <h6>Qty</h6>
+                    <h6>Stocks left</h6>
                     <input
                       type="number"
                       name="quantity"
@@ -187,13 +190,24 @@ class AdminManage extends Component {
                 </Col>
                 <Col md="8">
                   <div className="switch-parent">
-                    <label>Set item {this.state.isItemActive ? 'Disable' : 'Enable'}</label>
-                    <Switch className="switch-item-activity" onClick={this.toggleItemActiveSwitch} on={this.state.isItemActive}>
-                      {this.state.isItemActive ? <MdCheck /> : <MdClose />}
-                    </Switch>
+                    <label>Set item {this.state.selectedRow.active ? 'Disable' : 'Enable'}</label>
+                    <Switch
+                      className="switch-item-activity"
+                      onChange={this.toggleItemActiveSwitch}
+                      checked={!this.state.selectedRow.active ? false : this.state.selectedRow.active} />
                   </div>
                 </Col>
               </Row>
+              <div className="info-form footer">
+                <div className="left">
+                  <label htmlFor="manageproducts-file-upload" className="change-image"><MdFileUpload />Change Image</label>
+                  <button className="remove"><MdDeleteForever />Remove Item</button>
+                  <input type="file" id="manageproducts-file-upload" />
+                </div>
+                <div className="right">
+                  <button className="save"><MdSave />Save</button>
+                </div>
+              </div>
             </div>
           </div>
         </Modal>

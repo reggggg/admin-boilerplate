@@ -3,10 +3,11 @@ import { TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
 import { MdPersonAdd, MdModeEdit, MdContentPaste } from 'react-icons/md';
 import classnames from 'classnames';
 
-import AdminManage from './Admin';
-import AdminRequests from './AdminRequests';
-import CreateAdmin from './CreateAdmin';
 import '../../../../css/views/Tabs/Tabs.css';
+
+const AdminManage = React.lazy(() => import('./Admin'));
+const AdminRequests = React.lazy(() => import('./AdminRequests'));
+const CreateAdmin = React.lazy(() => import('./CreateAdmin'));
 
 class PermissionAdmin extends Component {
   constructor(props) {

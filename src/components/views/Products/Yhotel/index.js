@@ -3,9 +3,10 @@ import { TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
 import { MdAddShoppingCart, MdModeEdit } from 'react-icons/md';
 import classnames from 'classnames';
 
-import ManageProducts from './ManageProducts';
 
 import '../../../../css/views/Tabs/Tabs.css';
+
+const ManageProducts = React.lazy(() => import('./ManageProducts'));
 
 class ProductsManagement extends Component {
   constructor(props) {
