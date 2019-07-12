@@ -127,12 +127,20 @@ export const YHotelManageProduct = [
   {
     name: 'Image',
     selector: 'image',
-    center: true
+    center: true,
+    cell: row => {
+      return <div className="table-small-image"><img src={row.image} alt=""/></div>
+    }
   },
   {
     name: 'Name',
     selector: 'name',
     sortable: true,
+    left: true
+  },
+  {
+    name: 'Description',
+    selector: 'description',
     left: true
   },
   {
@@ -143,9 +151,13 @@ export const YHotelManageProduct = [
     cell: (row) => {
       return (
         <div className="category_tags_parent">
-          {row.category.map((item, index) => (
-            <div key={index} className="category_tags">{item}</div>
-          ))}
+          {row.category.map((item, index) => {
+            return (
+              <div key={index} className="category_tags">
+                {item.label}
+              </div>
+            )
+          })}
         </div>
       )
     }
@@ -154,7 +166,8 @@ export const YHotelManageProduct = [
     name: 'Quantity',
     selector: 'quantity',
     sortable: true,
-    center: true
+    center: true,
+    cell: row => row.quantity.toLocaleString()
   },
   {
     name: 'Active',

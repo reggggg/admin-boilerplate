@@ -1,9 +1,120 @@
-.managaeProducts {
+.manageProducts {
 
 }
-.managaeProducts .managaeProductsContent {
+.manageProducts .manageProductsContent {
 
 }
-.managaeProducts .managaeProductsContent .table-body {
+.manageProducts .manageProductsContent .table-body {
   border: 1px solid #ecf0f1;
+}
+
+
+/* Modal */
+.modal-content {
+  border-radius: 2px;
+  /* border: 1px solid #ecf0f1; */
+}
+.modal-manage-products {
+
+}
+.modal-manage-products img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.modal-manage-products .info-parent {
+  border: 1px solid #ecf0f1;
+}
+.modal-manage-products .info-parent .info-form {
+  padding: 20px 16px;
+}
+.modal-manage-products .info-parent .info-form .info-each-row {
+  margin: 5px 0;
+}
+.modal-manage-products .info-parent .info-form .info-each-row h6 {
+  font-family: 'Muli-SemiBold';
+  font-size: 11px;
+  margin-bottom: -3px;
+  margin-left: 1px;
+  color: #636e72;
+}
+.modal-manage-products .info-parent .info-form .info-each-row input,
+.modal-manage-products .info-parent .info-form .info-each-row textarea {
+  width: 100%;
+  outline: none;
+  padding: 5px 10px;
+  border: 1px solid rgb(35, 40, 50, 0.2);
+  border-radius: 1px;
+  font-family: 'Muli-Light';
+  font-size: 13px;
+  margin: 7px 0;
+  resize: none;
+}
+.modal-manage-products .info-parent .info-form .info-each-row .select-multitag {
+
+}
+.modal-manage-products .info-parent .info-form .info-each-row .select-multitag .select__control {
+  width: 100%;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid rgb(35, 40, 50, 0.2);
+  border-radius: 1px;
+  font-family: 'Muli-Regular';
+  font-size: 13px;
+  margin: 7px 0;
+  resize: none;
+}
+
+.modal-manage-products .info-parent .info-form .info-each-row .select-multitag .select__menu {
+  font-family: 'Muli-Regular';
+  font-size: 12px;
+}
+.modal-manage-products .info-parent .info-form .info-each-row input:hover,
+.modal-manage-products .info-parent .info-form .info-each-row textarea:hover,
+.modal-manage-products .info-parent .info-form .info-each-row .select-multitag .select__control:hover {
+  border: 1px solid rgb(35, 40, 50, 0.4);
+}
+.modal-manage-products .info-parent .info-form .info-each-row input:focus,
+.modal-manage-products .info-parent .info-form .info-each-row textarea:focus {
+  border: 1px solid rgb(35, 40, 50, 0.8);
+}
+
+/* Switch */
+.modal-manage-products .info-parent .info-form.qty_activity {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-top: -15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  flex-flow: nowrap;
+}
+.modal-manage-products .info-parent .info-form .switch-parent {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.modal-manage-products .info-parent .info-form .switch-parent label {
+  margin: 0;
+  font-family: 'Muli-SemiBold';
+  font-size: 11px;
+  width: 85px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.modal-manage-products .info-parent .info-form .switch-parent .switch-item-activity svg {
+  position: relative;
+  left: 4px;
+  bottom: 3px;
+}
+.modal-manage-products .info-parent .info-form .switch-parent .switch-item-activity {
+  background-color: #c0392b;
+  border: 1px solid #ecf0f1;
+  margin-left: 5px;
+}
+.modal-manage-products .info-parent .info-form .switch-parent .switch-item-activity.on {
+  background-color: #27ae60;
+}
+.modal-manage-products .info-parent .info-form .switch-parent .switch-item-activity .switch-toggle {
+  box-shadow: 1px 1px 1px Transparent;
 }

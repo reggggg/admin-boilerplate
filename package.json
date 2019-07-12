@@ -12,6 +12,8 @@
     "react-icons": "^3.6.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
+    "react-select": "^3.0.4",
+    "react-toggle-switch": "^3.0.4",
     "reactstrap": "^8.0.0",
     "styled-components": "^4.2.0"
   },

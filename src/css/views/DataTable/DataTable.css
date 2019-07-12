@@ -114,8 +114,16 @@ header.sc-chPdSV .sc-kgoBCf {
   font-family: 'Muli-SemiBold';
 
 }
+.sc-ifAKCX div.table-small-image {
+
+}
+.sc-ifAKCX div.table-small-image img {
+  width: 80px;
+  height: 40px;
+  object-fit: cover;
+}
 .sc-bxivhb .sc-ifAKCX:hover {
-  background-color: rgb(245,246,250, 0.6);
+  background-color: rgb(245, 246, 250, 0.6);
   cursor: pointer;
 }
 .sc-gqjmRU .sc-ifAKCX {
