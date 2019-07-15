@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import DataTable from 'react-data-table-component';
 import { YHotelManageProduct } from '../../../tableColumns';
 import { Modal, Row, Col } from 'reactstrap';
+import moment from 'moment';
 import Select from 'react-select';
 import Switch from "react-switch";
 
@@ -115,6 +116,10 @@ class AdminManage extends Component {
       { value: 'delicacy', label: 'Delicacy' },
       { value: 'drinks', label: 'Drinks' },
       { value: 'liquor', label: 'Liquor' },
+      { value: 'a', label: 'asdasd' },
+      { value: 'b', label: 'asdasdasd' },
+      { value: 'c', label: 'asdasdsadasd' },
+      { value: 'c', label: 'asdsadasdasdasda' },
     ];
     return (
       <div className="manageProducts">
@@ -145,7 +150,10 @@ class AdminManage extends Component {
               <Row className="info-form">
                 <Col md="12">
                   <div className="info-each-row">
-                    <h6>Name</h6>
+                    <span>
+                      <h6>Name</h6>
+                      <p>Date created:&nbsp;<label>{moment.unix(1563158127).format('l')}</label></p>
+                    </span>
                     <input
                       type="text"
                       name="name"
@@ -153,7 +161,10 @@ class AdminManage extends Component {
                     />
                   </div>
                   <div className="info-each-row">
-                    <h6>Description</h6>
+                    <span>
+                      <h6>Description</h6>
+                      <p>Last update:&nbsp;<label>{moment.unix(1563158127).fromNow()}</label></p>
+                    </span>
                     <textarea
                       type="text"
                       name="description"

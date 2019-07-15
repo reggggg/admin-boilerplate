@@ -20,3 +20,36 @@ li {
 a {
   outline: none;
 }
+
+.select-multitag {
+
+}
+.select-multitag .select__placeholder {
+  font-size: 12px;
+  font-family: 'Muli-Light';
+}
+.select-multitag .select__multi-value {
+
+}
+.select-multitag .select__value-container {
+
+}
+.select-multitag .select__control {
+  width: 100%;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid rgb(35, 40, 50, 0.2);
+  border-radius: 1px;
+  font-family: 'Muli-Regular';
+  font-size: 13px;
+  margin: 7px 0;
+  resize: none;
+}
+.select-multitag .select__menu {
+  font-family: 'Muli-Regular';
+  font-size: 12px;
+}
+
+.select-multitag .select__control:hover {
+  border: 1px solid rgb(35, 40, 50, 0.4);
+}

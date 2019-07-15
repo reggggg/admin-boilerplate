@@ -7,12 +7,13 @@ import classnames from 'classnames';
 import '../../../../css/views/Tabs/Tabs.css';
 
 const ManageProducts = React.lazy(() => import('./ManageProducts'));
+const CreateProduct = React.lazy(() => import('./CreateProduct'));
 
 class ProductsManagement extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: 1
+      activeTab: 2
     };
   }
 
@@ -37,8 +38,8 @@ class ProductsManagement extends Component {
           </NavItem>
           <NavItem>
             <NavLink
-              className={classnames({ active: this.state.activeTab === 3 })}
-              onClick={() => this.toggle(3)}
+              className={classnames({ active: this.state.activeTab === 2 })}
+              onClick={() => this.toggle(2)}
             ><span><MdAddShoppingCart />Create New Product</span>
             </NavLink>
           </NavItem>
@@ -48,10 +49,7 @@ class ProductsManagement extends Component {
             <ManageProducts />
           </TabPane>
           <TabPane tabId={2}>
-
-          </TabPane>
-          <TabPane tabId={3}>
-
+            <CreateProduct />
           </TabPane>
         </TabContent>
       </div>

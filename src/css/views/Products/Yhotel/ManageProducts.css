@@ -25,6 +25,10 @@
   cursor: pointer;
   color: rgb(255, 255, 255);
   mix-blend-mode: difference;
+  border-radius: 100%;
+}
+.modal-manage-products svg.close-modal-absolute:hover {
+  background-color: #000;
 }
 .modal-manage-products img {
   width: 100%;
@@ -40,12 +44,34 @@
 .modal-manage-products .info-parent .info-form .info-each-row {
   margin: 5px 0;
 }
+.modal-manage-products .info-parent .info-form .info-each-row span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-user-select: none;
+}
+.modal-manage-products .info-parent .info-form .info-each-row span h6,
 .modal-manage-products .info-parent .info-form .info-each-row h6 {
   font-family: 'Muli-SemiBold';
   font-size: 11px;
   margin-bottom: -3px;
   margin-left: 1px;
   color: #636e72;
+}
+.modal-manage-products .info-parent .info-form .info-each-row span p {
+  margin: 0;
+  font-family: 'Muli-Regular';
+  font-size: 10px;
+  margin-bottom: -3px;
+  margin-left: 1px;
+  color: #636e72;
+}
+.modal-manage-products .info-parent .info-form .info-each-row span p label {
+  margin: 0;
+  background-color: #7f8c8d;
+  color: #fff;
+  padding: 0 4px;
+  border-radius: 3px;
 }
 .modal-manage-products .info-parent .info-form .info-each-row input,
 .modal-manage-products .info-parent .info-form .info-each-row textarea {
@@ -60,30 +86,11 @@
   resize: none;
 }
 
-/* Select */
+/* Select -> helpers */
 
-.modal-manage-products .info-parent .info-form .info-each-row .select-multitag {
 
-}
-.modal-manage-products .info-parent .info-form .info-each-row .select-multitag .select__control {
-  width: 100%;
-  outline: none;
-  box-shadow: none;
-  border: 1px solid rgb(35, 40, 50, 0.2);
-  border-radius: 1px;
-  font-family: 'Muli-Regular';
-  font-size: 13px;
-  margin: 7px 0;
-  resize: none;
-}
-
-.modal-manage-products .info-parent .info-form .info-each-row .select-multitag .select__menu {
-  font-family: 'Muli-Regular';
-  font-size: 12px;
-}
 .modal-manage-products .info-parent .info-form .info-each-row input:hover,
-.modal-manage-products .info-parent .info-form .info-each-row textarea:hover,
-.modal-manage-products .info-parent .info-form .info-each-row .select-multitag .select__control:hover {
+.modal-manage-products .info-parent .info-form .info-each-row textarea:hover {
   border: 1px solid rgb(35, 40, 50, 0.4);
 }
 .modal-manage-products .info-parent .info-form .info-each-row input:focus,
