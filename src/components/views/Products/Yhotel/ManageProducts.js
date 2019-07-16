@@ -116,10 +116,6 @@ class AdminManage extends Component {
       { value: 'delicacy', label: 'Delicacy' },
       { value: 'drinks', label: 'Drinks' },
       { value: 'liquor', label: 'Liquor' },
-      { value: 'a', label: 'asdasd' },
-      { value: 'b', label: 'asdasdasd' },
-      { value: 'c', label: 'asdasdsadasd' },
-      { value: 'c', label: 'asdsadasdasdasda' },
     ];
     return (
       <div className="manageProducts">

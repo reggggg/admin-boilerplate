@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Row, Col } from 'reactstrap';
-import { MdImage, MdAdd, MdArrowUpward } from 'react-icons/md';
+import { MdImage, MdAdd, MdArrowUpward, MdDelete } from 'react-icons/md';
 import Select from 'react-select';
 import '../../../../css/views/Products/Yhotel/CreateProduct.css';
 
@@ -8,14 +8,77 @@ class CreateProduct extends Component {
   constructor(props){
     super(props);
     this.state = {
-
+      selectedImage: '',
+      categoriesSelected: [],
+      isErr: false,
+      errMsg: ''
     }
   }
 
 
 
-  chooseCategory = () => {
+  chooseCategory = async e => {
+    await this.setState({
+      categoriesSelected: e
+    });
+  }
 
+  formOnChange = async e => {
+    await this.setState({
+      [e.target.name]: e.target.value,
+      isErr: false
+    });
+  }
+
+  validateForms = () => {
+    const {
+      name,
+      description,
+      quantity,
+      type,
+      selectedImage
+    } = this.state;
+    if(!name || !description || !quantity || !type || !selectedImage){
+      this.setState({
+        isErr: true,
+        errMsg: 'All fiends are required!'
+      });
+    }else {
+      this.saveNewProduct();
+    }
+  }
+
+  saveNewProduct = () => {
+    alert('save');
+  }
+
+  imageSelect = async e => {
+    e.preventDefault();
+    let reader = new FileReader();
+    let file = e.target.files[0];
+    if(!file){
+      console.log('meow');
+    }else {
+      if(e.target.files[0].size > 307200){
+        alert('Image size is too big!');
+      }else {
+        reader.onload = async () => {
+          await this.setState({
+            selectedImage: reader.result
+          });
+          console.log('state', this.state.selectedImage);
+          console.log('res', reader.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+  }
+
+  removeImage = async () => {
+    await this.setState({
+      selectedImage: ''
+    });
+    console.log('removed = ', this.state.selectedImage);
   }
 
   render() {
@@ -33,12 +96,16 @@ class CreateProduct extends Component {
           </div>
           <Row className="forms">
             <Col lg="5">
+              <div className={this.state.isErr ? 'err' : 'err hidden'}>
+                {this.state.errMsg}
+              </div>
               <div className="inputs">
                 <h6>Name</h6>
                 <input
                   type="text"
                   placeholder="Name"
                   name="name"
+                  onChange={this.formOnChange}
                 />
               </div>
               <div className="inputs">
@@ -48,6 +115,7 @@ class CreateProduct extends Component {
                   rows="3"
                   placeholder="Description"
                   name="description"
+                  onChange={this.formOnChange}
                 />
               </div>
               <Row className="split">
@@ -58,7 +126,8 @@ class CreateProduct extends Component {
                       type="number"
                       min="0"
                       placeholder="Qty"
-                      name="quanitity"
+                      name="quantity"
+                      onChange={this.formOnChange}
                     />
                   </div>
                 </Col>
@@ -69,6 +138,7 @@ class CreateProduct extends Component {
                       type="text"
                       placeholder="Cuisine / Type"
                       name="type"
+                      onChange={this.formOnChange}
                     />
                   </div>
                 </Col>
@@ -85,15 +155,18 @@ class CreateProduct extends Component {
                   classNamePrefix="select"
                 />
               </div>
-              <button className="save-new-product"><MdAdd />Add New Product</button>
+              <button className="save-new-product" onClick={this.validateForms}><MdAdd />Add New Product</button>
             </Col>
             <Col lg="3">
               <div className="upload-image">
                 <div className="icon-div">
-                  <MdImage />
+                  {!this.state.selectedImage ? <MdImage /> : <img src={this.state.selectedImage} className="display-image" alt="" />}
                 </div>
-                <label htmlFor="create-product-image"><MdArrowUpward />Upload Image</label>
-                <input type="file" id="create-product-image" />
+                <div className="upload-remove">
+                  {!this.state.selectedImage ? <span> </span> : <span onClick={this.removeImage}><MdDelete />Remove Image</span>}
+                  <label htmlFor="create-product-image"><MdArrowUpward />Upload Image</label>
+                </div>
+                <input type="file" onChange={this.imageSelect} accept="image/png, image/jpeg" id="create-product-image" />
               </div>
             </Col>
           </Row>
