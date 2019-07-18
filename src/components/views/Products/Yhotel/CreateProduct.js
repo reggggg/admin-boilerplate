@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Row, Col } from 'reactstrap';
-import { MdImage, MdAdd, MdArrowUpward, MdDelete } from 'react-icons/md';
+import { MdImage, MdAdd, MdArrowUpward, MdDelete, MdClose } from 'react-icons/md';
 import Select from 'react-select';
 import '../../../../css/views/Products/Yhotel/CreateProduct.css';
 
@@ -14,7 +14,6 @@ class CreateProduct extends Component {
       errMsg: ''
     }
   }
-
 
 
   chooseCategory = async e => {
@@ -97,7 +96,7 @@ class CreateProduct extends Component {
           <Row className="forms">
             <Col lg="5">
               <div className={this.state.isErr ? 'err' : 'err hidden'}>
-                {this.state.errMsg}
+                {this.state.errMsg} <MdClose onClick={() => this.setState({ isErr: false })} />
               </div>
               <div className="inputs">
                 <h6>Name</h6>

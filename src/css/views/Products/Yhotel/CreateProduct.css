@@ -23,6 +23,16 @@
   border: 1px solid rgb(231, 76, 60, 0.7);
   margin-bottom: 15px;
 }
+.createProduct .createProductContent .err svg {
+  position: absolute;
+  right: 21px;
+  top: 5px;
+  color: #2c3e50;
+  border-radius: 100%;
+}
+.createProduct .createProductContent .err svg:hover {
+  background-color: #ecf0f1;
+}
 .createProduct .createProductContent .err.hidden {
   display: none;
 }
@@ -69,7 +79,7 @@
 
 /* image div */
 .createProduct .createProductContent .upload-image {
-  margin-top: 1px;
+  margin-top: 12px;
 }
 .createProduct .createProductContent .upload-image .icon-div {
   width: 100%;

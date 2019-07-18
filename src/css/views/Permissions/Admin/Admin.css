@@ -30,33 +30,64 @@
   border-radius: 3px;
 }
 .createAdmin .createAdminContent .forms div.errMsg {
-  padding: 8px 10px;
-  color: #e74c3c;
+  background-color: rgb(231, 76, 60, 0.7);
+  border-radius: 2px;
+  color: #fff;
+  text-align: center;
   font-family: 'Muli-Regular';
-  font-size: 15px;
+  font-size: 11px;
+  padding: 9px 20px;
+  border: 1px solid rgb(231, 76, 60, 0.7);
   display: none;
 }
 .createAdmin .createAdminContent .forms div.errMsg.show {
   display: block;
 }
-.createAdmin .createAdminContent .forms input[type="email"],
-.createAdmin .createAdminContent .forms input[type="text"] {
+.createAdmin .createAdminContent .forms div.errMsg svg {
+  position: static;
+  float: right;
+  color: #2c3e50;
+  border-radius: 100%;
+}
+.createAdmin .createAdminContent .forms div.errMsg svg:hover {
+  background-color: #ecf0f1;
+}
+.createAdmin .createAdminContent .forms .inputs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.createAdmin .createAdminContent .forms .inputs label {
+  margin: 0;
+  font-size: 11px;
+  font-family: 'Muli-SemiBold';
+  margin-left: 2px;
+  position: relative;
+  top: 15px;
+  left: 7px;
+  color: rgb(35, 40, 50, 0.5);
+  background: rgb(255, 255, 255);
+  padding: 0 5px;
+}
+.createAdmin .createAdminContent .forms .inputs input[type="email"],
+.createAdmin .createAdminContent .forms .inputs input[type="text"] {
   outline: none;
   width: 100%;
-  padding: 11px 13px;
+  padding: 8px 13px;
   border: 1px solid rgb(35, 40, 50, 0.2);
   border-radius: 3px;
   font-family: 'Muli-Light';
-  font-size: 16px;
+  font-size: 13px;
   transition: border 0.2s;
   margin: 7px 0;
 }
-.createAdmin .createAdminContent .forms input[type="email"]:hover,
-.createAdmin .createAdminContent .forms input[type="text"]:hover {
+.createAdmin .createAdminContent .forms .inputs input[type="email"]:hover,
+.createAdmin .createAdminContent .forms .inputs input[type="text"]:hover {
   border: 1px solid rgb(35, 40, 50, 0.5);
 }
-.createAdmin .createAdminContent .forms input[type="email"]:focus,
-.createAdmin .createAdminContent .forms input[type="text"]:focus {
+.createAdmin .createAdminContent .forms .inputs input[type="email"]:focus,
+.createAdmin .createAdminContent .forms .inputs input[type="text"]:focus {
   border: 1px solid rgb(35, 40, 50);
 }
 .createAdmin .createAdminContent .forms span {
@@ -68,15 +99,15 @@
 }
 .createAdmin .createAdminContent .forms span input[type="checkbox"] {
   margin-right: 7px;
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
 }
 .createAdmin .createAdminContent .forms span p {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
-  font-size: 13px;
+  font-size: 11px;
   font-family: 'Muli-Regular';
   word-spacing: 1px;
 }

@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
-import { MdPersonAdd, MdModeEdit, MdContentPaste } from 'react-icons/md';
+import { MdAddShoppingCart, MdModeEdit } from 'react-icons/md';
 import classnames from 'classnames';
+
 
 import '../../../../css/views/Tabs/Tabs.css';
 
-const AdminManage = React.lazy(() => import('./Admin'));
-const AdminRequests = React.lazy(() => import('./AdminRequests'));
-const CreateAdmin = React.lazy(() => import('./CreateAdmin'));
+const ClubClimax = React.lazy(() => import('./ClubClimax'));
+const StationY = React.lazy(() => import('./StationY'));
+const BeachCraft = React.lazy(() => import('./BeachCraft'));
 
-class PermissionAdmin extends Component {
+
+class YhotelServiceManagement extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: 3
+      activeTab: 1
     };
   }
 
@@ -27,43 +29,43 @@ class PermissionAdmin extends Component {
 
   render(){
     return (
-      <div className="permissionAdmin">
+      <div className="productsManagement">
         <Nav tabs className="y-tabs">
           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === 1 })}
               onClick={() => this.toggle(1)}
-            ><span><MdModeEdit /> Manage Admin</span>
+            ><span><MdModeEdit />Club Climax</span>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === 2 })}
               onClick={() => this.toggle(2)}
-            ><span><MdContentPaste /> Admin Requests</span>
+            ><span><MdAddShoppingCart />Station Y</span>
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === 3 })}
               onClick={() => this.toggle(3)}
-            ><span><MdPersonAdd /> Create New Admin</span>
+            ><span><MdAddShoppingCart />Beach Craft</span>
             </NavLink>
           </NavItem>
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId={1}>
-            <AdminManage />
+            <ClubClimax />
           </TabPane>
           <TabPane tabId={2}>
-            <AdminRequests />
+            <StationY />
           </TabPane>
           <TabPane tabId={3}>
-            <CreateAdmin />
+            <BeachCraft />
           </TabPane>
         </TabContent>
       </div>
     );
   }
 }
-export default PermissionAdmin;
+export default YhotelServiceManagement;

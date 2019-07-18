@@ -28,6 +28,23 @@ class LeftSideBar extends Component {
     }
   }
 
+  componentDidMount(){
+    this.highlightPathLocation();
+  }
+
+  highlightPathLocation = () => {
+    let location = history.location.pathname;
+    if(location === '/dashboard'){
+      this.setState({ activeIndex: 0 });
+    }else if(location === '/products_yhotel'){
+      this.setState({ activeIndex: 1 });
+    }else if(location === '/services_yhotel' ){
+      this.setState({ activeIndex: 2 });
+    }else if(location === '/manage_admin'){
+      this.setState({ activeIndex: 3 });
+    }
+  }
+
   componentWillMount(){
     this.setState({
       leftNavData: NavItems
