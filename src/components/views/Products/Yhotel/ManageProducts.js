@@ -21,7 +21,7 @@ class AdminManage extends Component {
       selectedRowIndex: null,
       openModal: false,
       loadingData: false,
-      paginationInitRows: 10
+      paginationInitRows: 10,
     }
   }
 
@@ -109,6 +109,28 @@ class AdminManage extends Component {
     console.log(this.state.selectedRow.active);
   }
 
+  imageSelect = async e => {
+    e.preventDefault();
+    let reader = new FileReader();
+    let file = e.target.files[0];
+    if(!file){
+      console.log('meow');
+    }else {
+      if(e.target.files[0].size > 307200){
+        alert('Image size is too big!');
+      }else {
+        reader.onload = async () => {
+          let set = this.state.data;
+          set[this.state.selectedRowIndex].image = reader.result;
+          this.setState({ data: set });
+          // console.log('state', this.state.selectedImage);
+          // console.log('res', reader.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+  }
+
   render(){
     const categories = [
       { value: 'pasta', label: 'Pasta' },
@@ -141,7 +163,7 @@ class AdminManage extends Component {
         <Modal isOpen={this.state.openModal}>
           <div className="modal-manage-products">
             <MdClose className="close-modal-absolute" onClick={this.toggleModal} />
-            <img src={require('../../../../resources/images/carbonara.jpeg')} alt=""/>
+            <img src={this.state.selectedRow.image} alt="" className="image-manage-products" />
             <div className="info-parent">
               <Row className="info-form">
                 <Col md="12">
@@ -209,7 +231,7 @@ class AdminManage extends Component {
                 <div className="left">
                   <label htmlFor="manageproducts-file-upload" className="change-image"><MdFileUpload />Change Image</label>
                   <button className="remove"><MdDeleteForever />Remove Item</button>
-                  <input type="file" id="manageproducts-file-upload" />
+                  <input type="file" onChange={this.imageSelect} id="manageproducts-file-upload" />
                 </div>
                 <div className="right">
                   <button className="save"><MdSave />Save</button>

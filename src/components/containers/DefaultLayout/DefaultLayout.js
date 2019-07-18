@@ -6,6 +6,9 @@ import '../../../css/containers/DefaultLayout/DefaultLayout.css';
 //routes config
 import routes from '../../../routes';
 
+//history
+import history from '../../../js/history';
+
 //navs
 const TopBar = React.lazy(() => import('../TopBar/TopBar'));
 const LeftSideBar = React.lazy(() => import('../LeftSideBar/LeftSideBar'));
@@ -17,6 +20,12 @@ class DefaultLayout extends Component {
     super(props);
     this.state = {
       hideSideNav: true,
+    }
+  }
+
+  componentWillMount(){
+    if(!localStorage.getItem("UserSession")){
+      history.replace('/login')
     }
   }
 

@@ -132,7 +132,7 @@
 }
 .createProduct .createProductContent button.save-new-product {
   font-family: 'Muli-SemiBold';
-  font-size: 11px;
+  font-size: 12px;
   padding: 6px 12px;
   border-radius: 2px;
   outline: none;
@@ -145,5 +145,5 @@
   position: relative;
   bottom: 2px;
   margin-right: 4px;
-  font-size: 15px;
+  font-size: 16px;
 }

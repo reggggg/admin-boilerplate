@@ -4,6 +4,7 @@ import history from '../../../js/history';
 
 import '../../../css/views/Pages/Login.css';
 
+const url = "http://localhost:5000/graphql";
 class Login extends Component {
   constructor(props){
     super(props);
@@ -12,6 +13,12 @@ class Login extends Component {
       isErr: false,
       errMsg: '',
       remember: false
+    }
+  }
+
+  componentWillMount(){
+    if(localStorage.getItem('UserSession')){
+      history.push('/')
     }
   }
 
@@ -73,10 +80,43 @@ class Login extends Component {
   }
 
   loginSubmit = () => {
-    console.log('To Dashboard...');
-    history.push('/dashboard');
-    this.setState({ isLoading: false });
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        query: `
+          query {
+            login(email: "${this.state.email}", password: "${this.state.password}") {
+              userId
+              token
+              tokenExpiration
+            }
+          }
+        `
+      })
+    })
+    .then(res => res.json())
+    .then(result => {
+      let err = result.errors;
+      if(!err){
+        localStorage.setItem("UserSession", JSON.stringify({
+          token: result.data.login.token,
+          tokenExpiration: result.data.login.tokenExpiration
+        }));
+        history.push('/dashboard');
+      }else {
+        this.setState({
+          isErr: true,
+          errMsg: err[0].message,
+          isLoading: false
+        });
+      }
+    })
   }
+
+
   render(){
     return (
       <div className="login">

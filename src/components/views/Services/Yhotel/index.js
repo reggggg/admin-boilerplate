@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
-import { MdAddShoppingCart, MdModeEdit } from 'react-icons/md';
+import { MdAddShoppingCart } from 'react-icons/md';
 import classnames from 'classnames';
 
 
@@ -35,7 +35,7 @@ class YhotelServiceManagement extends Component {
             <NavLink
               className={classnames({ active: this.state.activeTab === 1 })}
               onClick={() => this.toggle(1)}
-            ><span><MdModeEdit />Club Climax</span>
+            ><span><MdAddShoppingCart />Club Climax</span>
             </NavLink>
           </NavItem>
           <NavItem>

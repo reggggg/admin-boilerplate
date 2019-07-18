@@ -20,6 +20,7 @@ const Error404 = React.lazy(() => import('./components/views/Pages/Error404'));
 const loading = () => <div className="loader"></div>
 
 class App extends Component {
+
   render(){
     return (
       <div className="App">
