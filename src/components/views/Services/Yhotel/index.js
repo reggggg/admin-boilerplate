@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 
 import '../../../../css/views/Tabs/Tabs.css';
+import '../../../../css/views/Services/Yhotel/index.css';
 
 const ClubClimax = React.lazy(() => import('./ClubClimax'));
 const StationY = React.lazy(() => import('./StationY'));
@@ -29,7 +30,7 @@ class YhotelServiceManagement extends Component {
 
   render(){
     return (
-      <div className="productsManagement">
+      <div className="serviceManagement">
         <Nav tabs className="y-tabs">
           <NavItem>
             <NavLink

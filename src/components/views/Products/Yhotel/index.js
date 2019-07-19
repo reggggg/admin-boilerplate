@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 
 import '../../../../css/views/Tabs/Tabs.css';
+import '../../../../css/views/Products/Yhotel/index.css';
 
 const ManageProducts = React.lazy(() => import('./ManageProducts'));
 const CreateProduct = React.lazy(() => import('./CreateProduct'));

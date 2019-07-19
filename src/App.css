@@ -1,8 +1,7 @@
 body {
-
+  background-color: #fafafa !important;
 }
 html {
-  background-color: rgb(255, 255, 255) !important;
   width: 100%;
   height: 0;
 

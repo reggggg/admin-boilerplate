@@ -159,3 +159,41 @@
     flex-direction: column;
   }
 }
+
+/*  Modal submit to email */
+.register-modal {
+  background-color: #fff !important;
+}
+.register-modal .modal-content {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 0;
+}
+.register-modal .modal-content svg {
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+.register-modal .modal-content h5 {
+  font-size: 20px;
+  font-family: 'Muli-SemiBold';
+  margin-bottom: 10px;
+}
+.register-modal .modal-content p {
+  font-size: 13px;
+  font-family: 'Muli-Regular';
+  color: #7f8c8d;
+}
+.register-modal .modal-content button {
+  width: 100%;
+  background-color: #34495e;
+  color: #fff;
+  font-family: 'Muli-SemiBold';
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 14px;
+  margin: 10px 0;
+}

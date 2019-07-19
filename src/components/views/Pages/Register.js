@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import { Modal } from 'reactstrap';
+import { MdMailOutline } from 'react-icons/md';
+import history from '../../../js/history';
 
 import '../../../css/views/Pages/Register.css';
 
@@ -7,6 +10,7 @@ class Login extends Component {
   constructor(props){
     super(props);
     this.state = {
+      modalOpen: false,
       isLoading: false,
       isErr: false,
       errMsg: ''
@@ -19,6 +23,11 @@ class Login extends Component {
     });
   }
 
+  regexValidateEmail = email => {
+    let re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return re.test(email);
+  }
+
   validateFields = () => {
     const { email, firstName, lastName, jobPosition } = this.state;
     this.setState({ isLoading: true });
@@ -28,14 +37,29 @@ class Login extends Component {
         errMsg: 'Input your credentials!',
         isLoading: false
       });
+    }else if(this.regexValidateEmail(email) === false){
+      this.setState({
+        isErr: true,
+        errMsg: 'Invalid Email!',
+        isLoading: false
+      });
     }else {
       this.submitRequest();
     }
   }
 
   submitRequest = () => {
-    console.log('Submitted');
-    this.setState({ isLoading: false });
+    this.setState({
+      isLoading: false,
+    });
+    this.toggleModal();
+  }
+
+  toggleModal = () => {
+    this.setState({ modalOpen: !this.state.modalOpen });
+  }
+  goToSignin = () => {
+    history.push('/login');
   }
 
   render(){
@@ -77,7 +101,9 @@ class Login extends Component {
                 placeholder="Job Position"
               />
               <div className={this.state.isErr ? 'errMsg show' : 'errMsg'}>{this.state.errMsg}</div>
-              <button className="submit" onClick={this.validateFields}>{this.state.isLoading ? 'SENDING...' : 'SEND REQUEST'}</button>
+              <button className="submit" onClick={this.validateFields} disabled={this.state.isLoading ? true : false}>
+                {this.state.isLoading ? 'SENDING REQUEST...' : 'SEND REQUEST'}
+              </button>
               <div className="noAccount">
                 <label>Already have an account?</label>
                 <Link to="/login">Go to login</Link>
@@ -85,6 +111,12 @@ class Login extends Component {
             </div>
           </div>
         </div>
+        <Modal isOpen={this.state.modalOpen} className="register-modal">
+          <MdMailOutline />
+          <h5>Account request has been sent to your admin!</h5>
+          <p>Please wait for their confirmation and they will send you your password in your email. You will be given a random passcode. Please change your password immediately. </p>
+          <button onClick={this.goToSignin}>Go to Signin</button>
+        </Modal>
       </div>
     );
   }
