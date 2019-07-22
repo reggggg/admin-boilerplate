@@ -5,10 +5,6 @@ import '../../../css/views/Dashboard/Dashboard.css';
 
 class Dashboard extends Component {
 
-  componentDidMount(){
-    
-  }
-
   render(){
     return (
       <div className="dashboard">

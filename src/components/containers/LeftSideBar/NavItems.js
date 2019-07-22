@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdDashboard, MdSettings, MdExpandMore, MdShoppingBasket, MdRoomService } from 'react-icons/md';
+import { MdDashboard, MdSettings, MdExpandMore, MdShoppingBasket, MdRoomService, MdImage } from 'react-icons/md';
 const NavItems = [
   {
     isActive: false,
@@ -45,6 +45,14 @@ const NavItems = [
       },
     ],
     caret: <MdExpandMore />
+  },
+  {
+    isActive: false,
+    nav: 'Gallery',
+    icon: <MdImage />,
+    childNavs: [],
+    caret: null,
+    url: '/gallery'
   },
   {
     isActive: false,

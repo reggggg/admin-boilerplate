@@ -42,6 +42,8 @@ class LeftSideBar extends Component {
       this.setState({ activeIndex: 2 });
     }else if(location === '/manage_admin'){
       this.setState({ activeIndex: 3 });
+    }else if(location === '/gallery'){
+      this.setState({ activeIndex: 4 });
     }
   }
 
