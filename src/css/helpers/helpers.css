@@ -53,3 +53,10 @@ a {
 .select-multitag .select__control:hover {
   border: 1px solid rgb(35, 40, 50, 0.4);
 }
+
+
+/* Tooltip */
+.tooltip-inner {
+  font-family: 'Muli-Regular';
+  font-size: 11px;
+}

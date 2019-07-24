@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
 import { MdImage, MdAdd, MdArrowUpward, MdDelete, MdClose } from 'react-icons/md';
 import Select from 'react-select';
 import '../../../../css/views/Products/Yhotel/CreateProduct.css';
@@ -93,82 +93,84 @@ class CreateProduct extends Component {
           <div className="titlebar">
             Y Hotel - Create new Product
           </div>
-          <Row className="forms">
-            <Col lg="5">
-              <div className={this.state.isErr ? 'err' : 'err hidden'}>
-                {this.state.errMsg} <MdClose onClick={() => this.setState({ isErr: false })} />
-              </div>
-              <div className="inputs">
-                <h6>Name</h6>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  name="name"
-                  onChange={this.formOnChange}
-                />
-              </div>
-              <div className="inputs">
-                <h6>Description</h6>
-                <textarea
-                  type="text"
-                  rows="3"
-                  placeholder="Description"
-                  name="description"
-                  onChange={this.formOnChange}
-                />
-              </div>
-              <Row className="split">
-                <Col md="6">
-                  <div className="inputs">
-                    <h6>Qty</h6>
-                    <input
-                      type="number"
-                      min="0"
-                      placeholder="Qty"
-                      name="quantity"
-                      onChange={this.formOnChange}
-                    />
-                  </div>
-                </Col>
-                <Col md="6">
-                  <div className="inputs">
-                    <h6>Type</h6>
-                    <input
-                      type="text"
-                      placeholder="Cuisine / Type"
-                      name="type"
-                      onChange={this.formOnChange}
-                    />
-                  </div>
-                </Col>
-              </Row>
-              <div className="inputs">
-                <h6>Category</h6>
-                <Select
-                  isMulti
-                  onChange={this.chooseCategory}
-                  name="category"
-                  isClearable={false}
-                  options={categories}
-                  className="select-multitag"
-                  classNamePrefix="select"
-                />
-              </div>
-              <button className="save-new-product" onClick={this.validateForms}><MdAdd />Add New Product</button>
-            </Col>
-            <Col lg="3">
-              <div className="upload-image">
-                <div className="icon-div">
-                  {!this.state.selectedImage ? <MdImage /> : <img src={this.state.selectedImage} className="display-image" alt="" />}
+          <Container>
+            <Row className="forms">
+              <Col lg="5">
+                <div className={this.state.isErr ? 'err' : 'err hidden'}>
+                  {this.state.errMsg} <MdClose onClick={() => this.setState({ isErr: false })} />
                 </div>
-                <div className="upload-remove">
-                  {!this.state.selectedImage ? <span> </span> : <span onClick={this.removeImage}><MdDelete />Remove Image</span>}
-                  <label htmlFor="create-product-image"><MdArrowUpward />Upload Image</label>
+                <div className="inputs">
+                  <h6>Name</h6>
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                    onChange={this.formOnChange}
+                  />
                 </div>
-                <input type="file" onChange={this.imageSelect} accept="image/png, image/jpeg" id="create-product-image" />
-              </div>
-            </Col>
-          </Row>
+                <div className="inputs">
+                  <h6>Description</h6>
+                  <textarea
+                    type="text"
+                    rows="3"
+                    placeholder="Description"
+                    name="description"
+                    onChange={this.formOnChange}
+                  />
+                </div>
+                <Row className="split">
+                  <Col md="6">
+                    <div className="inputs">
+                      <h6>Qty</h6>
+                      <input
+                        type="number"
+                        min="0"
+                        placeholder="Qty"
+                        name="quantity"
+                        onChange={this.formOnChange}
+                      />
+                    </div>
+                  </Col>
+                  <Col md="6">
+                    <div className="inputs">
+                      <h6>Type</h6>
+                      <input
+                        type="text"
+                        placeholder="Cuisine / Type"
+                        name="type"
+                        onChange={this.formOnChange}
+                      />
+                    </div>
+                  </Col>
+                </Row>
+                <div className="inputs">
+                  <h6>Category</h6>
+                  <Select
+                    isMulti
+                    onChange={this.chooseCategory}
+                    name="category"
+                    isClearable={false}
+                    options={categories}
+                    className="select-multitag"
+                    classNamePrefix="select"
+                  />
+                </div>
+                <button className="save-new-product" onClick={this.validateForms}><MdAdd />Add New Product</button>
+              </Col>
+              <Col lg="3">
+                <div className="upload-image">
+                  <div className="icon-div">
+                    {!this.state.selectedImage ? <MdImage /> : <img src={this.state.selectedImage} className="display-image" alt="" />}
+                  </div>
+                  <div className="upload-remove">
+                    {!this.state.selectedImage ? <span> </span> : <span onClick={this.removeImage}><MdDelete />Remove Image</span>}
+                    <label htmlFor="create-product-image"><MdArrowUpward />Upload Image</label>
+                  </div>
+                  <input type="file" onChange={this.imageSelect} accept="image/png, image/jpeg" id="create-product-image" />
+                </div>
+              </Col>
+            </Row>
+          </Container>
         </div>
       </div>
     )

@@ -1,0 +1,177 @@
+.yhotelGallery {
+  width: 100%;
+  margin: 0;
+}
+.yhotelGallery .yhotelGalleryContent {
+
+}
+.yhotelGallery .yhotelGalleryContent .logo-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-user-select: none;
+}
+.yhotelGallery .yhotelGalleryContent .logo-banner img.banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.yhotelGallery .yhotelGalleryContent .logo-banner div.logo {
+  position: absolute;
+  border-radius: 100%;
+  padding: 4px;
+  width: 250px;
+  height: 250px;
+  top: 267px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.yhotelGallery .yhotelGalleryContent .logo-banner div.logo img {
+  width: 240px;
+  height: 240px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+.yhotelGallery .yhotelGalleryContent .controls {
+  margin: 4px 0;
+  margin-top: 150px;
+  padding: 18px 5px;
+}
+.yhotelGallery .yhotelGalleryContent .controls select {
+  width: 100%;
+  font-family: 'Muli-SemiBold';
+  font-size: 13px;
+  padding: 10px 3px;
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid rgb(53, 59, 72, 0.2);
+  color: rgb(53, 59, 72, 0.7);
+}
+.yhotelGallery .yhotelGalleryContent .controls select option {
+
+}
+.yhotelGallery .yhotelGalleryContent .controls .sorts {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px 0;
+}
+.yhotelGallery .yhotelGalleryContent .controls .sorts .icons {
+  margin: 0 2px;
+  border-radius: 3px;
+  padding: 3px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  background-color: rgb(53, 59, 72, 0.1);
+  -webkit-user-select: none;
+}
+.yhotelGallery .yhotelGalleryContent .controls .sorts .icons:hover {
+  background-color: rgb(53, 59, 72, 0.2);
+}
+.yhotelGallery .yhotelGalleryContent .controls .sorts .icons svg {
+  font-size: 22px;
+  color: rgb(53, 59, 72, 0.5);
+  margin: 0;
+}
+.yhotelGallery .yhotelGalleryContent ul.gallery-tabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+.yhotelGallery .yhotelGalleryContent ul.gallery-tabs li {
+  margin: 0 10px;
+  cursor: pointer;
+  font-family: 'Muli-Bold';
+  font-size: 14px;
+  color: #353b48;
+  padding: 5px 10px;
+  border-bottom: 2px solid Transparent;
+  transition: all 0.2s;
+  color: #718093;
+  -webkit-user-select: none;
+}
+.yhotelGallery .yhotelGalleryContent ul.gallery-tabs li.active {
+  border-bottom: 2px solid #487eb0;
+  color: #000;
+}
+.yhotelGallery .yhotelGalleryContent ul.gallery-tabs li:hover {
+  background-color: #f5f6fa;
+}
+
+.yhotelGallery .yhotelGalleryContent .featured-photos,
+.yhotelGallery .yhotelGalleryContent .image-collections {
+  margin: 10px auto;
+  margin-bottom: 25px;
+  overflow: hidden;
+  padding: 10px 8px 0 8px;
+  border-radius: 5px;
+  background-color: rgb(236,240,241, 0.3);
+}
+.yhotelGallery .yhotelGalleryContent .featured-photos h5,
+.yhotelGallery .yhotelGalleryContent .image-collections h5  {
+  font-family: 'Muli-SemiBold';
+  color: #353b48;
+  font-size: 16px;
+}
+.yhotelGallery .yhotelGalleryContent .featured-photos .eachPhoto,
+.yhotelGallery .yhotelGalleryContent .image-collections .eachPhoto {
+  margin: 3px 0;
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0 3px;
+}
+.yhotelGallery .yhotelGalleryContent .featured-photos .eachPhoto .imgdiv {
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+.yhotelGallery .yhotelGalleryContent .featured-photos .eachPhoto:hover .imgdiv,
+.yhotelGallery .yhotelGalleryContent .featured-photos .eachPhoto:focus .imgdiv {
+  /* -ms-transform: scale(1.090);
+    -moz-transform: scale(1.090);
+    -webkit-transform: scale(1.090);
+    -o-transform: scale(1.090);
+    transform: scale(1.090); */
+    -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(70%);
+}
+.yhotelGallery .yhotelGalleryContent .featured-photos .eachPhoto .imgdiv img,
+.yhotelGallery .yhotelGalleryContent .image-collections .eachPhoto .imgdiv img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+
+.yhotelGallery .yhotelGalleryContent .featured-photos .eachPhoto .inside-info {
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
+.yhotelGallery .yhotelGalleryContent .featured-photos .eachPhoto:hover .inside-info {
+  display: block;
+}
+.yhotelGallery .yhotelGalleryContent .featured-photos .eachPhoto .inside-info .rate-star {
+  padding: 0 12px;
+}
+
+@media(max-width: 1070px) {
+  .yhotelGallery .yhotelGalleryContent .featured-photos .eachPhoto {
+    max-width: 50%;
+  }
+}
+@media(max-width: 590px) {
+  .yhotelGallery .yhotelGalleryContent .featured-photos .eachPhoto {
+    max-width: 100%;
+  }
+}

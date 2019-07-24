@@ -21,13 +21,7 @@
 .createAdmin {
 
 }
-.createAdmin .createAdminContent {
-
-}
-.createAdmin .createAdminContent .forms {
-
-}
-.createAdmin .createAdminContent .forms h2 {
+.createAdmin h2.title {
   font-family: 'Muli-SemiBold';
   font-size: 16px;
   margin-bottom: 8px;
@@ -35,6 +29,12 @@
   padding: 20px;
   color: #576574;
   border-radius: 3px;
+}
+.createAdmin .createAdminContent {
+
+}
+.createAdmin .createAdminContent .forms {
+
 }
 .createAdmin .createAdminContent .forms div.errMsg {
   background-color: rgb(231, 76, 60, 0.7);
